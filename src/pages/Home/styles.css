@@ -1,0 +1,121 @@
+#home {
+    height: 100vh;
+}
+
+#lblPesquisa {
+    margin: -80px 0 50px 765px;
+
+}
+
+#logo {
+    margin-top: 0;
+    position: relative;
+    align-self: start;
+    width: 239px;
+}
+
+#bg {
+    background: url("../../assets/fundo1.png") no-repeat center;
+}
+
+#conteudo {
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+#info {
+    max-width: 480px;
+}
+
+#pesquisa {
+    width: 500px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+#acesso {
+    margin-top: 90px;
+}
+
+.botoes {
+    width: 100%;
+    max-width: 275px;
+    height: 50px;
+    background: var(--cor-botao);
+    border-radius: 3px;
+    border: 0;
+  
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    margin-top: -10px;
+    margin-bottom: 30px;
+}
+
+.botoes span {
+    display: block;
+    background: var(--cor-principal);
+    width: 50px;
+    height: 50px;
+    border-radius: 3px 0px 0px 3px;
+    margin-left: -6px;
+      
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.2s;
+}
+
+.botoes span svg {
+    color: #FFF;
+    width: 20px;
+    height: 20px;
+}
+
+.botoes strong {
+    flex: 1;
+    text-align: center;
+    color: #FFF;
+    font-size: 28px;
+}
+
+.botoes:hover {
+    background: var(--cor-principal);
+    transition: background-color 0.5s;
+}
+
+.colunas {
+    margin-left: 40px;
+}
+
+.titulo {
+    font-style: normal;
+    font-weight: bold;
+    font-size: 36px;
+    line-height: 42px;
+}
+
+.subtitulo {
+    margin-top: 30px;
+    font-size: 20px;
+    line-height: 23px;
+}
+
+.categorias {
+    height: 130px;
+    width: 180px;
+    margin-bottom: 50px;
+    margin-left: 25px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border: 0px;
+    color: var(--cor-principal);
+    font-size: 16px;
+    font-weight: bold;
+    background-color: #FFF;
+}
+
+.categorias:hover {
+    background-color: var(--cor-botao);
+    transition: 0.5s;
+}
