@@ -4,11 +4,10 @@
 
 #lblPesquisa {
     margin: -80px 0 50px 765px;
-
 }
 
 #logo {
-    margin-top: 0;
+    margin-top: -10px;
     position: relative;
     align-self: start;
     width: 239px;
@@ -25,17 +24,19 @@
 }
 
 #info {
+    margin-top: 50px;
     max-width: 480px;
 }
 
 #pesquisa {
+    margin-top: -20px;
     width: 500px;
     display: flex;
     justify-content: flex-end;
 }
 
 #acesso {
-    margin-top: 90px;
+    margin-top: 60px;
 }
 
 .botoes {
@@ -100,6 +101,7 @@
     margin-top: 30px;
     font-size: 20px;
     line-height: 23px;
+    font-weight: bold;
 }
 
 .categorias {
@@ -116,6 +118,6 @@
 }
 
 .categorias:hover {
-    background-color: var(--cor-botao);
+    background-color: var(--cor-hover);
     transition: 0.5s;
 }

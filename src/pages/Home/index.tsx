@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom';
 
 import './styles.css';
 
-import logo from '../../assets/logo1.png';
 import residencial from '../../assets/residencial.png';
 import automotivo from '../../assets/automotivo.png';
 import eletronica from '../../assets/eletronica.png';

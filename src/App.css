@@ -1,7 +1,8 @@
 :root {
     --cor-principal: #0C406B;
     --cor-titulo: #8C0404;
-    --cor-botao: #3772A4
+    --cor-botao: #3772A4;
+    --cor-hover: #C8D3E2;
 }
 
 body {
