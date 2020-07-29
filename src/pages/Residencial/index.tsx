@@ -24,20 +24,20 @@ const Residencial = () => {
             <div className="subBotoes">
                 <Link to="/residencial">
                     <button  className="subCategorias">
-                        <img src={pintura} alt='Pintura' width="135px"/>
+                        <img src={pintura} alt='Pintura' />
                         Pintura
                     </button>
                 </Link>
             
                 <Link to="/automotiva">
                     <button className="subCategorias">
-                    <img src={alvenaria} alt='Pintura' width="135px"/>
+                    <img src={alvenaria} alt='Pintura' />
                         Alvenaria
                     </button>
                 </Link>
                 <Link to="/eletrônica">
                     <button className="subCategorias">
-                    <img src={eletrica} alt='Pintura' width="135px"/>
+                    <img src={eletrica} alt='Pintura'/>
                         Elétrica
                     </button>
                 </Link>
@@ -45,19 +45,19 @@ const Residencial = () => {
                 <div className="subBotoes">
                 <Link to="/jardim">
                     <button className="subCategorias">
-                    <img src={hidraulica} alt='Pintura' width="135px"/>
+                    <img src={hidraulica} alt='Pintura' />
                         Hidráulica
                     </button>
                 </Link>
                 <Link to="/móveis">
                     <button className="subCategorias">
-                    <img src={limpeza} alt='Pintura' width="135px"/>
+                    <img src={limpeza} alt='Pintura' />
                         Limpeza pesada
                     </button>
                 </Link>
                 <Link to="/outras categorias">
                     <button className="subCategorias">
-                    <img src={mais} alt='Pintura' width="135px"/>
+                    <img src={mais} alt='Pintura' />
                         Listar todos
                     </button>
                 </Link>
