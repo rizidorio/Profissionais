@@ -10,17 +10,15 @@ import eletronica from '../../assets/eletronica.png';
 import jardim from '../../assets/jardim.png';
 import mais from '../../assets/mais.png';
 import moveis from '../../assets/moveis.png';
+import Cabecalho from '../../components/Cabecalho';
 
 
 const Home = () => {
     return (
-        <div id="Home">
-                
-                <div id="lblPesquisa">
-                    <p>Selecione abaixo qual a categoria que gostaria de pesquisar:</p>
-                </div>
-
-            <div id="bg">
+        <>
+        <Cabecalho />
+        <div id="bg">
+                <p className="pesquisa">Selecione abaixo qual a categoria que gostaria de pesquisar:</p>  
             <div id="conteudo">
                 <div id="info">
                     <h1 className="titulo">
@@ -97,7 +95,7 @@ const Home = () => {
 
             </div>
             </div>
-        </div>
+        </>
     );
 }
 

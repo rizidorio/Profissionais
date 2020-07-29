@@ -1,14 +1,17 @@
 import React from 'react';
-import { Route, BrowserRouter } from 'react-router-dom';
+import { Route, BrowserRouter, Switch } from 'react-router-dom';
 
 import Home from './pages/Home';
-import Pesquisa from './pages/Pesquisa';
+import Residencial from './pages/Residencial'
+
 
 const Routes = () => {
     return (
         <BrowserRouter>
-            <Route component={Home} path="/" exact />
-            <Route children={<Pesquisa />} path="/:categoria" />
+            <Switch>
+                <Route component={Home} path="/" exact />
+                <Route component={Residencial} path="/residencial" />
+            </Switch>
         </BrowserRouter>
     );
 };

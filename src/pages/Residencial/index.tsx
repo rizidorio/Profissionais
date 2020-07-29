@@ -9,13 +9,16 @@ import limpeza from '../../assets/limpeza.png';
 import alvenaria from '../../assets/pedreiro.svg';
 import hidraulica from '../../assets/encanamento.png';
 import mais from '../../assets/outros_residencial.png';
+import Cabecalho from '../../components/Cabecalho';
 
-const Residencial: React.FC = () => {
+const Residencial = () => {
 
     return (
-        <div>
-            <h1>Manutenção Residencial</h1>
+        <>
+        <Cabecalho />
+           
         <div id="subResidencial">
+            <h1>Manutenção Residencial</h1>
             <p className="subtitulo">Selecione uma subcategoria para vizualizar a lista de profissionais especializados em manutenção residencial</p>
             
             <div className="subBotoes">
@@ -60,7 +63,7 @@ const Residencial: React.FC = () => {
                 </Link>
             </div>
         </div>
-        </div>
+        </>
     );
 }
 

@@ -1,35 +1,24 @@
-#home {
-    height: 100vh;
-}
-
-#lblPesquisa {
-    margin: -80px 0 50px 765px;
-}
-
-#logo {
-    margin-top: -10px;
-    position: relative;
-    align-self: start;
-    width: 239px;
-}
 
 #bg {
     background: url("../../assets/fundo1.png") no-repeat center;
+    margin-top: -70px;
+}
+
+.pesquisa {
+    text-align: end;
+    margin-top: -50px;
 }
 
 #conteudo {
-    margin: 0;
     display: flex;
     justify-content: space-between;
 }
 
 #info {
-    margin-top: 50px;
-    max-width: 480px;
+    max-width: 500px;
 }
 
 #pesquisa {
-    margin-top: -20px;
     width: 500px;
     display: flex;
     justify-content: flex-end;
@@ -87,7 +76,7 @@
 }
 
 .colunas {
-    margin-left: 40px;
+    margin-left: 50px;
 }
 
 .titulo {
@@ -95,6 +84,7 @@
     font-weight: bold;
     font-size: 36px;
     line-height: 42px;
+    text-align: left;
 }
 
 .subtitulo {
