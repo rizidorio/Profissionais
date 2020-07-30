@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 
 import './styles.css';
 
@@ -10,6 +9,7 @@ import alvenaria from '../../assets/pedreiro.svg';
 import hidraulica from '../../assets/encanamento.png';
 import mais from '../../assets/outros_residencial.png';
 import Cabecalho from '../../components/Cabecalho';
+import ButtonPesquisa from '../../components/BotoesPesquisa';
 
 const Residencial = () => {
 
@@ -22,45 +22,54 @@ const Residencial = () => {
             <p className="subtitulo">Selecione uma subcategoria para vizualizar a lista de profissionais especializados em manutenção residencial</p>
             
             <div className="subBotoes">
-                <Link to="/residencial">
-                    <button  className="subCategorias">
-                        <img src={pintura} alt='Pintura' />
-                        Pintura
-                    </button>
-                </Link>
-            
-                <Link to="/automotiva">
-                    <button className="subCategorias">
-                    <img src={alvenaria} alt='Pintura' />
-                        Alvenaria
-                    </button>
-                </Link>
-                <Link to="/eletrônica">
-                    <button className="subCategorias">
-                    <img src={eletrica} alt='Pintura'/>
-                        Elétrica
-                    </button>
-                </Link>
-                </div>
-                <div className="subBotoes">
-                <Link to="/jardim">
-                    <button className="subCategorias">
-                    <img src={hidraulica} alt='Pintura' />
-                        Hidráulica
-                    </button>
-                </Link>
-                <Link to="/móveis">
-                    <button className="subCategorias">
-                    <img src={limpeza} alt='Pintura' />
-                        Limpeza pesada
-                    </button>
-                </Link>
-                <Link to="/outras categorias">
-                    <button className="subCategorias">
-                    <img src={mais} alt='Pintura' />
-                        Listar todos
-                    </button>
-                </Link>
+                <ButtonPesquisa 
+                    url="/pintores"
+                    text="Pintura"
+                    classe="subCategorias"
+                    img={pintura}
+                    alt="Pintura"
+                />
+
+                <ButtonPesquisa 
+                    url="/pedreiros"
+                    text="Alvenaria"
+                    classe="subCategorias"
+                    img={alvenaria}
+                    alt="Alvenaria"
+                />
+
+                <ButtonPesquisa 
+                    url="/eletricistas"
+                    text="Elétrica"
+                    classe="subCategorias"
+                    img={eletrica}
+                    alt="Elétrica"
+                />
+            </div>
+            <div className="subBotoes">
+                <ButtonPesquisa 
+                    url="/encanadores"
+                    text="Hidráulica"
+                    classe="subCategorias"
+                    img={hidraulica}
+                    alt="Hidráulica"
+                />
+
+                <ButtonPesquisa 
+                    url="/limpezas"
+                    text="Limpeza pesada"
+                    classe="subCategorias"
+                    img={limpeza}
+                    alt="Limpeza pesada"
+                />
+
+                <ButtonPesquisa 
+                    url="/todos"
+                    text="Listar todos"
+                    classe="subCategorias"
+                    img={mais}
+                    alt="Listar todos"
+                />
             </div>
         </div>
         </>

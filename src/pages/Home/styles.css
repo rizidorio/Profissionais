@@ -4,28 +4,22 @@
     margin-top: -70px;
 }
 
-.pesquisa {
-    text-align: end;
-    margin-top: -50px;
-}
-
 #conteudo {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
 }
 
 #info {
+    max-width: 460px;
+}
+
+#categorias {
     max-width: 500px;
-}
-
-#pesquisa {
-    width: 500px;
     display: flex;
-    justify-content: flex-end;
-}
-
-#acesso {
-    margin-top: 60px;
+    justify-content: space-around;
+    flex: 1;
+    flex-wrap: wrap;
+    margin-left: 30px;
 }
 
 .botoes {
@@ -75,39 +69,45 @@
     transition: background-color 0.5s;
 }
 
-.colunas {
-    margin-left: 50px;
+.pesquisa {
+    text-align: end;
 }
 
 .titulo {
     font-style: normal;
     font-weight: bold;
     font-size: 36px;
-    line-height: 42px;
     text-align: left;
 }
 
 .subtitulo {
-    margin-top: 30px;
     font-size: 20px;
     line-height: 23px;
     font-weight: bold;
 }
 
-.categorias {
-    height: 130px;
-    width: 180px;
-    margin-bottom: 50px;
-    margin-left: 25px;
+.buttonCat {
+    display: block;
+    text-align: center;    
+    max-width: 130px;
+    max-height: 130px;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border: 0px;
     color: var(--cor-principal);
     font-size: 16px;
     font-weight: bold;
     background-color: #FFF;
+    margin-top: 30px;
+    margin-bottom: 80px;
 }
 
-.categorias:hover {
+.buttonCat img {
+    width: 120px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.buttonCat:hover {
     background-color: var(--cor-hover);
     transition: 0.5s;
 }

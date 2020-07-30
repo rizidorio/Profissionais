@@ -28,7 +28,10 @@ p {
     color: var(--cor-principal);
 }
 
+a {
+    text-decoration: none;
+}
+
 #root {
-    min-height: 100vh;
-    
+    min-height: 100vh;   
 }

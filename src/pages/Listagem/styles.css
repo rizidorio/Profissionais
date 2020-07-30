@@ -1,0 +1,9 @@
+main {
+    max-width: 1200px;
+    min-width: 400px;
+    display: flex;
+    flex: 1;
+    justify-content: space-around;
+    margin-top: -70px;
+}
+

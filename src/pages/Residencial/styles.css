@@ -4,18 +4,9 @@
     margin-top: -100px;
 }
 
-.subBotoes {
-    display: flex;
-    justify-content: space-around;
-}
-
-.subtitulo {
-    margin-top: 50px;
-}
-
 .subCategorias {
-    max-width: 140px;
-    max-height: 140px;
+    max-width: 130px;
+    max-height: 130px;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border: 0px;
     color: var(--cor-principal);
@@ -27,12 +18,22 @@
 
 .subCategorias img {
     width: 120px;
-    margin-top: 10px;
+    margin-top: 5px;
     margin-bottom: 5px;
 }
+
 .subCategorias:hover {
     background-color: var(--cor-hover);
     transition: 0.5s;
+}
+
+.subBotoes {
+    display: flex;
+    justify-content: space-around;
+}
+
+.subtitulo {
+    margin-top: 50px;
 }
 
 @media(max-width: 900px) {
@@ -42,12 +43,11 @@
 
     .subCategorias {
         height: 110px;
-        width: 130px;
+        width: 110px;
         margin-bottom: 70px;
     }
 
     .subCategorias img {
-        width: 90px;
-        
+        width: 90px;   
     }
 }
