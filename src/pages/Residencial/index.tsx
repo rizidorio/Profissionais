@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 import './styles.css';
 
-import eletrica from '../../assets/eletrica.png';
+import eletrica from '../../assets/eletrica.png'
 import pintura from '../../assets/pintor.png';
 import limpeza from '../../assets/limpeza.png';
 import alvenaria from '../../assets/pedreiro.svg';
