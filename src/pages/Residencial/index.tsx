@@ -23,7 +23,7 @@ const Residencial = () => {
             
             <div className="subBotoes">
                 <ButtonPesquisa 
-                    url="/pintores"
+                    url="/residencial/Pintores"
                     text="Pintura"
                     classe="subCategorias"
                     img={pintura}
