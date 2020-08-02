@@ -9,7 +9,9 @@ import alvenaria from '../../assets/pedreiro.svg';
 import hidraulica from '../../assets/encanamento.png';
 import mais from '../../assets/outros_residencial.png';
 import Cabecalho from '../../components/Cabecalho';
-import ButtonPesquisa from '../../components/BotoesPesquisa';
+import ButtonPesquisa from '../../components/BotaoPesquisa';
+import Voltar from '../../components/BotaoVoltar';
+
 
 const Residencial = () => {
 
@@ -19,6 +21,7 @@ const Residencial = () => {
            
         <div id="subResidencial">
             <h1>Manutenção Residencial</h1>
+            
             <p className="subtitulo">Selecione uma subcategoria para vizualizar a lista de profissionais especializados em manutenção residencial</p>
             
             <div className="subBotoes">
@@ -70,6 +73,9 @@ const Residencial = () => {
                     img={mais}
                     alt="Listar todos"
                 />
+            </div>
+            <div className="voltar">
+                <Voltar />
             </div>
         </div>
         </>

@@ -7,10 +7,10 @@ import './styles.css';
 const Cabecalho = () => {
     return (
         <>
-            <header id="cabecalho">
+            <header>
                 <Link to="/">
                     <img src={Logo} alt="Logo" id="logo" />
-                </Link>
+                </Link>                    
             </header>
         </>
     );

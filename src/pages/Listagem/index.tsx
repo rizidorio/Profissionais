@@ -1,11 +1,12 @@
 import React from 'react';
-import { RouteComponentProps} from 'react-router-dom';
-
+import { RouteComponentProps } from 'react-router-dom';
 import { FiChevronsLeft, FiChevronsRight} from 'react-icons/fi';
 
 import Cabecalho from '../../components/Cabecalho';
+import Voltar from '../../components/BotaoVoltar'
 
 import './styles.css';
+import Dados from '../../components/DadosLista';
 
 type props = {prof: string};
 
@@ -15,49 +16,103 @@ const Lista = ({match}: RouteComponentProps<props>) => {
         <>
             <Cabecalho />
             <main id="pagLista">
-                <h1>{match.params.prof} Residenciais em <a href="">Volta Redonda</a></h1>
+                <h1>{match.params.prof} Residenciais em <a href="/cidades">Volta Redonda</a></h1>
                 <div id="conteudo">
                     <div className="profissionais">
-
+                        <Dados 
+                            nome="Pintor Teste"
+                            contato="(24) 99999-9999"
+                            bairro="Bairro"
+                            whats="+5524999999999"
+                            face="teste"
+                        />
                     </div>
 
                     <div className="profissionais">
-
+                        <Dados 
+                            nome="Pintor Teste"
+                            contato="(24) 99999-9999"
+                            bairro="Bairro"
+                            whats="+5524999999999"
+                            face="teste"
+                        />
                     </div>
 
                     <div className="profissionais">
-
+                        <Dados 
+                            nome="Pintor Teste"
+                            contato="(24) 99999-9999"
+                            bairro="Bairro"
+                            whats="+5524999999999"
+                            face="teste"
+                        />
                     </div>
 
                     <div className="profissionais">
-
+                        <Dados 
+                            nome="Pintor Teste"
+                            contato="(24) 99999-9999"
+                            bairro="Bairro"
+                            whats="+5524999999999"
+                            face="teste"
+                        />
                     </div>
 
                     <div className="profissionais">
-
+                        <Dados 
+                            nome="Pintor Teste"
+                            contato="(24) 99999-9999"
+                            bairro="Bairro"
+                            whats="+5524999999999"
+                            face="teste"
+                        />
                     </div>
 
                     <div className="profissionais">
-
+                        <Dados 
+                            nome="Pintor Teste"
+                            contato="(24) 99999-9999"
+                            bairro="Bairro"
+                            whats="+5524999999999"
+                            face="teste"
+                        />
                     </div>
 
                     <div className="profissionais">
-
+                        <Dados 
+                            nome="Pintor Teste"
+                            contato="(24) 99999-9999"
+                            bairro="Bairro"
+                            whats="+5524999999999"
+                            face="teste"
+                        />
                     </div>
 
                     <div className="profissionais">
-
+                        <Dados 
+                            nome="Pintor Teste"
+                            contato="(24) 99999-9999"
+                            bairro="Bairro"
+                            whats="+5524999999999"
+                            face="teste"
+                        />
                     </div>
+
                 </div>
+                
+                <div className="voltar">
+                    <Voltar />
+                </div>
+
                 <footer>
-                    <a href="" className="esquerda">
+                    <a href="/pagina" className="esquerda">
                         <span >
                             <FiChevronsLeft />
                         </span>
                         Página anterior
                     </a>
                     <p>1 de 60</p>
-                    <a href="" className="direita">
+                    <a href="/pagina" className="direita">
                         Próxima página
                         <span>
                             <FiChevronsRight />

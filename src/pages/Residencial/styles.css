@@ -1,10 +1,9 @@
 #subResidencial {
     background: url("../../assets/fundo_casa500.png") no-repeat center;
     text-align: center;
-    margin-top: -100px;
 }
 
-.subCategorias {
+#subResidencial .subCategorias {
     max-width: 130px;
     max-height: 130px;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
@@ -13,27 +12,43 @@
     font-size: 16px;
     font-weight: bold;
     background-color: #FFF;
-    margin-bottom: 100px;
 }
 
-.subCategorias img {
+#subResidencial .subCategorias img {
     width: 120px;
     margin-top: 5px;
     margin-bottom: 5px;
 }
 
-.subCategorias:hover {
+#subResidencial .subCategorias:hover {
     background-color: var(--cor-hover);
     transition: 0.5s;
 }
 
-.subBotoes {
+#subResidencial .subBotoes {
     display: flex;
     justify-content: space-around;
+    margin-bottom: 80px;
 }
 
-.subtitulo {
+#subResidencial .subtitulo {
     margin-top: 50px;
+    text-align: center;
+}
+
+#subResidencial .voltar {
+    text-align: end;
+    margin-right: 30px;
+}
+
+#subResidencial .voltar a {
+    padding: 5px;
+    color: var(--cor-principal);
+}
+
+#subResidencial .voltar a:hover {
+    background-color: var(--cor-hover);
+    color: #FFF;
 }
 
 @media(max-width: 900px) {
@@ -41,13 +56,13 @@
         background: url("../../assets/fundo_casa2.png") no-repeat center;
     }
 
-    .subCategorias {
+    #subResidencial .subCategorias {
         height: 110px;
         width: 110px;
         margin-bottom: 70px;
     }
 
-    .subCategorias img {
+    #subResidencial .subCategorias img {
         width: 90px;   
     }
 }

@@ -1,0 +1,14 @@
+.dados {
+    margin-left: 2%;
+}
+
+.redesSociais {
+    display: flex;
+    justify-content: space-around;
+    margin: 2%;
+}
+
+.redesSociais img {
+    width: 42px;
+    height: 42px;
+}

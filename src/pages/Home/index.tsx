@@ -10,7 +10,7 @@ import jardim from '../../assets/jardim.png';
 import mais from '../../assets/mais.png';
 import moveis from '../../assets/moveis.png';
 import Cabecalho from '../../components/Cabecalho';
-import ButtonPesquisa from '../../components/BotoesPesquisa';
+import ButtonPesquisa from '../../components/BotaoPesquisa';
 
 
 const Home = () => {
