@@ -1,7 +1,6 @@
-#pagLista main {
-    max-height: 100vh;
-    max-width: 1200px;
+#pagLista {
     min-width: 400px;
+    margin-top: -10px;
     text-align: center;
 }
 
@@ -12,7 +11,6 @@
 #pagLista #conteudo {
     display: flex;
     justify-content: space-between;
-    margin-top: 40px;
     flex-wrap: wrap;
 }
 
@@ -25,7 +23,8 @@
     font-size: 16px;
     font-weight: bold;
     background-color: #FFF;
-    margin-bottom: 60px;
+    margin-bottom: 50px;
+    text-align: start;
 }
 
 #pagLista footer {
