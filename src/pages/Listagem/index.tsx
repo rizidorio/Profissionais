@@ -3,7 +3,6 @@ import { RouteComponentProps } from 'react-router-dom';
 import { FiChevronsLeft, FiChevronsRight} from 'react-icons/fi';
 
 import Cabecalho from '../../components/Cabecalho';
-import Voltar from '../../components/BotaoVoltar'
 
 import './styles.css';
 import Dados from '../../components/DadosLista';
@@ -98,10 +97,6 @@ const Lista = ({match}: RouteComponentProps<props>) => {
                         />
                     </div>
 
-                </div>
-                
-                <div className="voltar">
-                    <Voltar />
                 </div>
 
                 <footer>

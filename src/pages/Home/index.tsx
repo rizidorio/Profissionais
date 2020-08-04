@@ -15,16 +15,15 @@ import ButtonPesquisa from '../../components/BotaoPesquisa';
 
 const Home = () => {
     return (
-        <>
-            <Cabecalho />
-            <main id="bg">
-                 
-                <div id="conteudo">
-                    <div id="info">
-                        <h1 className="titulo">
+        <div id="Home" className="container">
+            <Cabecalho titulo="Manutenção Residencial" />
+            {/* <main id="page-background">  
+                <div className="conteudo">
+                    <div>
+                        <h1>
                             Seu site de pesquisa de profissionais especializados em manutenções diversas
                         </h1>
-                        <p className="subtitulo">
+                        <p>
                             Aqui você encontrará profissionais capacitados em solucinar os mais diversos problemas.
                         </p>
                         <p>É um profissional e gostaria de mais informações?</p>
@@ -95,8 +94,8 @@ const Home = () => {
                         />
                     </div>
                 </div> 
-            </main>
-        </>
+            </main> */}
+        </div>
     );
 }
 

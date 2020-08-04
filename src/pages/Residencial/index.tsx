@@ -10,7 +10,6 @@ import hidraulica from '../../assets/encanamento.png';
 import mais from '../../assets/outros_residencial.png';
 import Cabecalho from '../../components/Cabecalho';
 import ButtonPesquisa from '../../components/BotaoPesquisa';
-import Voltar from '../../components/BotaoVoltar';
 
 
 const Residencial = () => {
@@ -73,9 +72,6 @@ const Residencial = () => {
                     img={mais}
                     alt="Listar todos"
                 />
-            </div>
-            <div className="voltar">
-                <Voltar />
             </div>
         </div>
         </>
