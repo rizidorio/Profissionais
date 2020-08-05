@@ -6,7 +6,7 @@ import Logo from '../../assets/logo1.png';
 import './styles.css';
 
 interface CabecalhoProps {
-    titulo?: string;
+    titulo: string;
 }
 
 const Cabecalho: React.FC<CabecalhoProps> = (props) => {

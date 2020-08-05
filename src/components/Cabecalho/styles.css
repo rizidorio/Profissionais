@@ -32,9 +32,8 @@
 
 .page-header .header-content a {
     height: 1.5rem;
-    background-color: var(--cor-botao);
     padding: 0.2rem;
-    color: var(--cor-branco);
+    color: var(--cor-principal);
     font-size: 1.2rem;
     transition: opacity 0.2s;
     position: absolute;

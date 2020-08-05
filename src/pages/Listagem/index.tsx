@@ -13,9 +13,8 @@ const Lista = ({match}: RouteComponentProps<props>) => {
 
     return (
         <>
-            <Cabecalho />
+            <Cabecalho titulo={`${match.params.prof} Residenciais em Volta Redonda`}/>
             <main id="pagLista">
-                <h1>{match.params.prof} Residenciais em <a href="/cidades">Volta Redonda</a></h1>
                 <div id="conteudo">
                     <div className="profissionais">
                         <Dados 

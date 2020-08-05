@@ -16,10 +16,9 @@ const Residencial = () => {
 
     return (
         <>
-        <Cabecalho />
+        <Cabecalho titulo="Manutenção Residencial"/>
            
         <div id="subResidencial">
-            <h1>Manutenção Residencial</h1>
             
             <p className="subtitulo">Selecione uma subcategoria para vizualizar a lista de profissionais especializados em manutenção residencial</p>
             

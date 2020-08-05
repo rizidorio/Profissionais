@@ -1,0 +1,43 @@
+#page-home {
+    height: 100vh;
+    width: 100vw;
+
+    display: flex;
+    justify-content: center;
+    align-items: initial;
+}
+
+.logo-container {
+    margin: 0 0.5rem;
+    margin-bottom: 1.2rem;
+}
+
+.logo-container h2 {
+    color: var(--cor-titulo);
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin-top: 0.8rem;
+}
+
+.back-img {
+    width: 100%;
+}
+
+.botoes-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 0 0.5rem;
+    text-align: center;
+}
+
+.botoes-container a {
+    background-color: var(--cor-botao);
+    padding: 0.8rem;
+    color: var(--cor-branco);
+    width: 100%;
+}
+ 
+.botoes-container a:first-child {
+    margin-bottom: 1.2rem;
+}
