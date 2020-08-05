@@ -7,16 +7,20 @@
     align-items: initial;
 }
 
-.logo-container {
-    margin: 0 0.5rem;
+.logo-container {   
     margin-bottom: 1.2rem;
+}
+
+img {
+    margin-top: 0.4rem;
 }
 
 .logo-container h2 {
     color: var(--cor-titulo);
     font-size: 1.5rem;
-    font-weight: 500;
+    font-weight: 700;
     margin-top: 0.8rem;
+    text-align: center;
 }
 
 .back-img {
@@ -28,16 +32,35 @@
     justify-content: center;
     flex-wrap: wrap;
     margin: 0 0.5rem;
-    text-align: center;
 }
 
 .botoes-container a {
     background-color: var(--cor-botao);
-    padding: 0.8rem;
+    height: 2.8rem;
     color: var(--cor-branco);
-    width: 100%;
+    width: 70%;
+    align-items: center;
+    display: flex;
+    justify-content: flex-start;
+    transition: 0.8s;
 }
- 
+
+.botoes-container a:hover {
+    background: var(--cor-principal);
+}
+
 .botoes-container a:first-child {
     margin-bottom: 1.2rem;
+}
+
+.botoes-container span {
+    background: var(--cor-principal);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 2.8rem;
+    height: 2.8rem;
+    margin-right: 2.2rem;
+    border-radius: 0 0.2rem 0.2rem 0;
+    font-size: 1.5rem;
 }
