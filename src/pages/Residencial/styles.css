@@ -1,5 +1,4 @@
 #subResidencial {
-    background: url("../../assets/fundo_casa500.png") no-repeat center;
     text-align: center;
 }
 
@@ -52,9 +51,6 @@
 }
 
 @media(max-width: 900px) {
-    #subResidencial {
-        background: url("../../assets/fundo_casa2.png") no-repeat center;
-    }
 
     #subResidencial .subCategorias {
         height: 110px;

@@ -5,21 +5,35 @@
     display: flex;
     justify-content: center;
     align-items: initial;
+    text-align: center;
 }
 
 .logo-container {   
-    margin-bottom: 1.2rem;
+    text-align: initial;
 }
 
-img {
-    margin-top: 0.4rem;
+.login {   
+    position: absolute;
+    top: 4.5rem;
+    right: 2rem;
+    font-size: 0.8rem;
+    color: var(--cor-principal);
+    transition: color 0.2s;
+}
+
+.login:hover {
+    color: var(--cor-hover);
+}
+
+.logo-container img {
+    width: 18rem;
+    margin-left: 1.2rem;
 }
 
 .logo-container h2 {
     color: var(--cor-titulo);
     font-size: 1.5rem;
     font-weight: 700;
-    margin-top: 0.8rem;
     text-align: center;
 }
 
@@ -31,7 +45,7 @@ img {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    margin: 0 0.5rem;
+    margin: 0 1.8rem;
 }
 
 .botoes-container a {
@@ -54,13 +68,78 @@ img {
 }
 
 .botoes-container span {
-    background: var(--cor-principal);
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 2.8rem;
-    height: 2.8rem;
-    margin-right: 2.2rem;
-    border-radius: 0 0.2rem 0.2rem 0;
     font-size: 1.5rem;
+}
+
+.botoes-container span svg {
+    margin-right: 2.6rem;
+    margin-left: 1.5rem;
+}
+
+@media (min-width: 700px) {
+    #page-home-content {
+        max-width: 1100px;
+        display: grid;
+        grid-template-rows: 1fr 1fr;
+        grid-template-columns: 2fr 1fr 1fr;
+        grid-template-areas: 
+        "logo img img"
+        "botoes botoes login";
+    }
+
+    .logo-container {
+        grid-area: logo;
+        align-self: center;
+        margin: 0;
+    }
+
+    .login {
+        grid-area: login;
+        font-size: 1.6rem;
+    }
+
+    .logo-container img {
+        width: 30rem;
+    }
+
+    .logo-container h2 {
+        font-size: 3.4rem;
+        text-align: center;
+        margin-top: 5.2rem;
+    }
+
+    .back-img {
+        grid-area: img;
+        justify-self: end;
+        margin-top: 15.2rem;
+    }
+
+    .botoes-container {
+        grid-area: botoes;
+        max-width: 48rem;
+        margin-left: 5rem;
+        flex-wrap: nowrap;
+        justify-content: flex-start;
+    }
+
+    .botoes-container a {
+        font-size: 1.8rem;
+        margin-right: 2.8rem;
+        height: 6.8rem;
+        padding: 2.5rem;
+        text-align: center;
+    }
+
+    .botoes-container span {
+        font-size: 2.2rem;
+        margin: 0;
+    }
+
+    .botoes-container span svg {
+        margin-right: 2.1rem;
+        margin-left: 0;
+    }
 }
