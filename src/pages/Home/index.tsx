@@ -14,9 +14,6 @@ const Home = () => {
             <div id="page-home-content" className="container">
                 <div className="logo-container">
                     <img src={logo} alt="Logotipo" />
-                    <Link to="/login" className="login">
-                        Login
-                    </Link>
                     <h2>Seu site de pesquisa de profissionais especializados em manutenções diversas</h2>
                 </div>
                 <img src={fundo} alt="Imagem background" className="back-img"/>
@@ -35,7 +32,14 @@ const Home = () => {
                         Procuro um profissional
                     </Link>
                 </div>
+                <div className="login">
+                    Já possui cadastro? Faça seu
+                    <Link to="/login" >
+                        Login
+                    </Link>
+                </div>
             </div> 
+            
         </div>
     );
 }

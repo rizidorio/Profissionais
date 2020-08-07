@@ -12,17 +12,21 @@
     text-align: initial;
 }
 
-.login {   
-    position: absolute;
-    top: 4.5rem;
-    right: 2rem;
-    font-size: 0.8rem;
+.login {
+    margin: 1.2rem auto 0;
+    font-size: 1rem;
     color: var(--cor-principal);
-    transition: color 0.2s;
+    max-width: 10rem;
 }
 
-.login:hover {
+.login a {   
     color: var(--cor-hover);
+    transition: color 0.2s;
+    margin-left: 0.4rem;
+}
+
+.login a:hover {
+    color: var(--cor-principal);
 }
 
 .logo-container img {
@@ -49,7 +53,7 @@
 }
 
 .botoes-container a {
-    background-color: var(--cor-botao);
+    background: var(--cor-titulo);
     height: 2.8rem;
     color: var(--cor-branco);
     width: 70%;
@@ -59,8 +63,12 @@
     transition: 0.8s;
 }
 
+.botoes-container a:first-child {
+    background-color: var(--cor-principal);
+}
+
 .botoes-container a:hover {
-    background: var(--cor-principal);
+    opacity: 0.6;
 }
 
 .botoes-container a:first-child {
@@ -87,18 +95,13 @@
         grid-template-columns: 2fr 1fr 1fr;
         grid-template-areas: 
         "logo img img"
-        "botoes botoes login";
+        "botoes login login";
     }
 
     .logo-container {
         grid-area: logo;
         align-self: center;
         margin: 0;
-    }
-
-    .login {
-        grid-area: login;
-        font-size: 1.6rem;
     }
 
     .logo-container img {
@@ -120,17 +123,19 @@
     .botoes-container {
         grid-area: botoes;
         max-width: 48rem;
-        margin-left: 5rem;
+        margin: 0 auto;
         flex-wrap: nowrap;
-        justify-content: flex-start;
     }
 
     .botoes-container a {
         font-size: 1.8rem;
-        margin-right: 2.8rem;
         height: 6.8rem;
         padding: 2.5rem;
         text-align: center;
+    }
+
+    .botoes-container a:first-child {
+        margin-right: 3.5rem;
     }
 
     .botoes-container span {
@@ -141,5 +146,17 @@
     .botoes-container span svg {
         margin-right: 2.1rem;
         margin-left: 0;
+    }
+
+    .login {
+        grid-area: login;
+        font-size: 1.6rem;
+        max-width: 100%;
+        align-self: start;
+        margin-top: 2.5rem;
+    }
+
+    .login a {
+        text-align: initial;
     }
 }

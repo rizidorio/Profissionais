@@ -3,7 +3,7 @@
     --cor-titulo: #701e1e;
     --cor-botao: #4b7f98;
     --cor-hover: #6f8f9b;
-    --cor-background: #f1faee;
+    --cor-background: #F8F8FC;
     --cor-background-header: #e1e1e7;
     --cor-branco: #ffffff;
 }
@@ -38,7 +38,7 @@ a {
 }
 
 .container {
-    width: 100vw;
+    min-width: 500px;
 }
 
 @media (min-width: 700px) {
