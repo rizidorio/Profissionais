@@ -1,97 +1,17 @@
-#pagLista {
-    min-width: 400px;
-    margin-top: -10px;
-    text-align: center;
+#page-list {
+    width: 100vw;
+    height: 100vh;
 }
 
-#pagLista h1 {
-    text-align: center;
+#page-list main {
+    padding: 0.8rem;
 }
 
-#pagLista #conteudo {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-}
-
-#pagLista .profissionais {
-    width: 280px;
-    height: 180px;
-    box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.25);
-    border: 0px;
-    color: var(--cor-principal);
-    font-size: 16px;
-    font-weight: bold;
-    background-color: #FFF;
-    margin-bottom: 50px;
-    text-align: start;
-}
-
-#pagLista footer {
-    display: flex;
-    flex: 1;
-    justify-content: center;
-}
-
-#pagLista footer p {
-    margin: 5px 20px;
-    color: black;
-}
-
-#pagLista footer a {
-    width: 100%;
-    max-width: 150px;
-    height: 30px;
-    background: var(--cor-botao);
-    color: #fff;
-    border-radius: 3px;
+.form-pesquisa fieldset {
     border: 0;
-    font-size: 16px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    overflow: hidden;
 }
 
-#pagLista footer a span {
-    width: 30px;
-    height: 30px;
-    border-radius: 3px 0px 0px 3px;
-    background-color: var(--cor-principal);
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-#pagLista footer span svg {
-    width: 20px;
-    height: 20px;
-}
-
-#pagLista footer a:hover {
-    background-color: var(--cor-principal);
-    transition: 0.8s;
-}
-
-.voltar {
-    text-align: end;
-}
-
-.voltar a {
-    padding: 5px;
-    color: var(--cor-principal);
-}
-
-.voltar a:hover {
-    background-color: var(--cor-hover);
-    color: #FFF;
-}
-
-.direita {
-    padding-left: 1%;
-}
-
-.esquerda {
-    padding-right: 1%;
+.form-pesquisa fieldset legend {
+    color: var(--cor-titulo);
+    margin-bottom: 1.2rem;
 }

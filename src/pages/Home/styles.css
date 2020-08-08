@@ -61,6 +61,7 @@
     display: flex;
     justify-content: flex-start;
     transition: 0.8s;
+    border-radius: 0.5rem;
 }
 
 .botoes-container a:first-child {

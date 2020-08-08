@@ -14,7 +14,7 @@ const Home = () => {
             <div id="page-home-content" className="container">
                 <div className="logo-container">
                     <img src={logo} alt="Logotipo" />
-                    <h2>Seu site de pesquisa de profissionais especializados em manutenções diversas</h2>
+                    <h2>Seu site de pesquisa de profissionais especializados em manutenções diversas.</h2>
                 </div>
                 <img src={fundo} alt="Imagem background" className="back-img"/>
 

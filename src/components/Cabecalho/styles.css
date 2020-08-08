@@ -1,75 +1,56 @@
-.page-header {
+#page-header-content {
+    max-width: 100%;
+    max-height: 25rem;
     display: flex;
-    flex-direction: column;
+    justify-content: start;
+    align-items: center;
     background: var(--cor-background-header);
-    max-height: 11.1rem;
+    margin: 0 auto;
 }
 
-.page-header .header-container {
-    width: 90%;
-    margin: 0 auto;
+#page-header-content img {
+    width: 16rem;
+}
+
+.header-back-title {
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    padding: 1.6rem 0;
+    margin: 0 auto;
+}
+
+.header-back-title strong {
+    font-size: 1.3rem;
     color: var(--cor-titulo);
+    margin-top: 1.5rem;
 }
 
-.page-header .header-container img {
-    width: 9.8rem;
-}
-
-.page-header .header-content {
-    width: 90%;
-    margin: 1.2rem auto;
-    position: relative;
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-end;
-}
-
-.page-header .header-content a {
-    height: 1.5rem;
-    padding: 0.2rem;
-    color: var(--cor-principal);
-    font-size: 1.2rem;
-    transition: opacity 0.2s;
+.header-back-title a {
     position: absolute;
-    bottom: 2.5rem;
-    text-align: center;
+    right: 5px;
+    top: 5px;
+    color: var(--cor-botao);
+    transition: opacity 0.2s;
+    font-size: 1.5rem;
 }
 
-.page-header .header-content a:hover {
-    opacity: 0.6;
+.header-back-title a:hover {
+    opacity: 0.5;
 }
 
-.page-header .header-content strong {
-    font: 700 1.4rem Roboto;
-}
-
-@media (min-width: 700px) {
-    .page-header {
-        height: 111px;
+@media(min-width: 700px) {
+    #page-header-content {
+        padding: 0.5rem;
     }
 
-    .page-header .header-container {
-        max-width: 1200px;
-        padding: 2.6rem 0;
+    #page-header-content img {
+        width: 22rem;
     }
 
-    .page-header .header-container img {
-        width: 19.2rem;
+    .header-back-title strong {
+        font-size: 2.8rem;
     }
 
-    .page-header .header-content a {
-        position: relative;
-        font-size: 2.4rem;
-        height: 2.8rem;
-    }
-
-    .page-header .header-content strong {
-        font-size: 3.6rem;
+    .header-back-title a {
+        font-size: 2.5rem;
     }
 }
