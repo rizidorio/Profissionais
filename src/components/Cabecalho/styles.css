@@ -2,20 +2,21 @@
     max-width: 100%;
     max-height: 25rem;
     display: flex;
-    justify-content: start;
+    justify-content: flex-start;
     align-items: center;
     background: var(--cor-background-header);
     margin: 0 auto;
 }
 
 #page-header-content img {
-    width: 16rem;
+    width: 14rem;
 }
 
 .header-back-title {
     display: flex;
     justify-content: space-between;
-    margin: 0 auto;
+    margin-top: 1.2rem;
+    text-align: center;
 }
 
 .header-back-title strong {
@@ -26,7 +27,7 @@
 
 .header-back-title a {
     position: absolute;
-    right: 5px;
+    right: 8px;
     top: 5px;
     color: var(--cor-botao);
     transition: opacity 0.2s;
@@ -44,6 +45,11 @@
 
     #page-header-content img {
         width: 22rem;
+    }
+
+    .header-back-title {
+        margin-left: 16rem;
+
     }
 
     .header-back-title strong {

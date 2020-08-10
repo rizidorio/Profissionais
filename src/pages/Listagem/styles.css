@@ -7,11 +7,34 @@
     padding: 0.8rem;
 }
 
+.form-pesquisa {
+    border-bottom: 1px solid var(--cor-botao);
+    width: 100%;
+    margin-bottom: 1.8rem;
+}
+
 .form-pesquisa fieldset {
+    margin-bottom: 1.2rem;
     border: 0;
 }
 
 .form-pesquisa fieldset legend {
     color: var(--cor-titulo);
-    margin-bottom: 1.2rem;
+    font: 700 1.2rem Fira Sans;
+    letter-spacing: 0.05rem;
+}
+
+@media(min-width: 700px) {
+    .form-pesquisa {
+        display: inline;
+        text-align: center;
+    }
+    
+    .form-pesquisa fieldset legend {
+        font-size: 1.8rem;
+        text-align: initial;
+        margin-left: 3rem;
+    }
+
+    
 }

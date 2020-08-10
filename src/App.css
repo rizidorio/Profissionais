@@ -29,8 +29,12 @@ body {
 }
 
 body, input, button, textarea {
-    font: 500 1.2rem Roboto;
+    font: 400 1rem Arimo;
     color: var(--cor-botao);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font: 700 Fira Sans;
 }
 
 a {

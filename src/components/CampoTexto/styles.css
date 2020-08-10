@@ -1,0 +1,73 @@
+
+.campos {
+    position: relative;
+    padding-top: 1.3rem;
+}
+
+.campos input {
+    width: 100%;
+    position: relative;
+    outline: none;
+    font-size: 1.2rem;
+    padding: 15px 20px;
+    border: 1px solid var(--cor-hover);
+    border-radius: 0.3rem;
+    transition: all 0.2s linear;
+    -webkit-transition: all 0.2s linear;
+    -moz-transition: all 0.2s linear;
+    background-color: var(--cor-background-header);
+}
+
+.campos input:focus {
+    border: 2px solid var(--cor-principal);
+   
+}
+
+.campos input::placeholder {
+    color: transparent;
+}
+
+.campos label {
+    pointer-events: none;
+    position: absolute;
+    top: calc(50% - 0.4rem);
+    left: 1rem;
+    transition: all 0.2s linear;
+    -webkit-transition: all 0.2s linear;
+    -moz-transition: all 0.2s linear;
+    padding: 0.5rem;
+    box-sizing: border-box;
+    font-size: 1rem;
+}
+
+.campos input:focus + label,
+.campos input:not(:placeholder-shown) + label {
+    font-size: 1.1rem;
+    font-weight: bold;
+    top: 0;
+    background-color: var(--cor-background);
+}
+
+@media(min-width: 700px) {
+    .campos {
+        display: inline-block;
+        width: 22%;
+        margin-right: 2.5rem;
+    }
+
+    .campos input {
+        font-size: 1.6rem;
+        margin-bottom: 1.2rem;
+    }
+
+    .campos label {
+        top: calc(50% - 1.2rem);
+        font-size: 1.8rem;
+    }
+
+    .campos input:focus + label,
+    .campos input:not(:placeholder-shown) + label {
+        font-size: 1.7rem;
+        top: -1px;
+    }
+}
