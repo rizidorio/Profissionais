@@ -17,13 +17,13 @@ interface DadosProps {
 
 const Dados: React.FC<DadosProps> = ({nome, contato, bairro, whats, face}) => {
     return (
-        <>
-            <div className="dados">
-                <p>Nome: {nome}</p>
-                <p>Contato:{contato}</p>
-                <p>Bairro: {bairro}</p>
-            </div>
-            <div className="redesSociais">
+        <article id="box-dados">
+            <section className="dados">
+                <p>Nome: <strong>{nome}</strong></p>
+                <p>Contato: <strong>{contato}</strong></p>
+                <p>Bairro: <strong>{bairro}<br /></strong></p>
+            </section>
+            <section className="redesSociais">
                 <Link to={`/${whats}`}>
                     <img src={whatsapp} alt='Whatsapp' />
                 </Link>
@@ -33,8 +33,8 @@ const Dados: React.FC<DadosProps> = ({nome, contato, bairro, whats, face}) => {
                 <Link to='/detalhes'>
                     <img src={mais} alt='Saiba mais' />
                 </Link>
-            </div>
-        </>
+            </section>
+        </article>
     );
 }
 

@@ -53,12 +53,72 @@ const Lista = ({match}: RouteComponentProps<props>) => {
                             />                           
                         </fieldset>
                     </form>
-                    <div className="lista-profissionais">
-                        <p>Preencha os campos acima para exibir a lista de profissionais.</p>
-                    </div>
+                    <hr />
+                    <section className="lista-profissionais">
+                        <Dados 
+                            nome="Pintor Teste" 
+                            bairro="Centro" 
+                            contato="(24)99999-9999"
+                            whats="+5524999999999"
+                            face="teste"
+                        />
+                        <Dados 
+                            nome="Pintor Teste" 
+                            bairro="Centro" 
+                            contato="(24)99999-9999"
+                            whats="+5524999999999"
+                            face="teste"
+                        />
+
+                        <Dados 
+                            nome="Pintor Teste" 
+                            bairro="Centro" 
+                            contato="(24)99999-9999"
+                            whats="+5524999999999"
+                            face="teste"
+                        />
+
+                        <Dados 
+                            nome="Pintor Teste" 
+                            bairro="Centro" 
+                            contato="(24)99999-9999"
+                            whats="+5524999999999"
+                            face="teste"
+                        />
+
+                        <Dados 
+                            nome="Pintor Teste" 
+                            bairro="Centro" 
+                            contato="(24)99999-9999"
+                            whats="+5524999999999"
+                            face="teste"
+                        />
+
+                        <Dados 
+                            nome="Pintor Teste" 
+                            bairro="Centro" 
+                            contato="(24)99999-9999"
+                            whats="+5524999999999"
+                            face="teste"
+                        />
+                          <Dados 
+                            nome="Pintor Teste" 
+                            bairro="Centro" 
+                            contato="(24)99999-9999"
+                            whats="+5524999999999"
+                            face="teste"
+                        />
+                          <Dados 
+                            nome="Pintor Teste" 
+                            bairro="Centro" 
+                            contato="(24)99999-9999"
+                            whats="+5524999999999"
+                            face="teste"
+                        />
+                    </section>
                     <footer>
                         <a href="/pagina" className="esquerda">
-                            <span >
+                            <span>
                                 <FiChevronsLeft />
                             </span>
                             Página anterior

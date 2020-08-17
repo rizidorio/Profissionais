@@ -12,6 +12,20 @@
     text-align: initial;
 }
 
+.logo-container img {
+    width: 18rem;
+    margin-left: 1.2rem;
+    margin-top: 0.5rem;
+}
+
+.logo-container h2 {
+    color: var(--cor-titulo);
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-align: center;
+    margin-top: 1.2rem;
+}
+
 .login {
     margin: 1.2rem auto 0;
     font-size: 1rem;
@@ -27,18 +41,6 @@
 
 .login a:hover {
     color: var(--cor-principal);
-}
-
-.logo-container img {
-    width: 18rem;
-    margin-left: 1.2rem;
-}
-
-.logo-container h2 {
-    color: var(--cor-titulo);
-    font-size: 1.5rem;
-    font-weight: 700;
-    text-align: center;
 }
 
 .back-img {

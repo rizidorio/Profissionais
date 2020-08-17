@@ -1,6 +1,7 @@
 :root {
     --cor-principal: #0f166d;
     --cor-titulo: #701e1e;
+    --cor-texto: #506e7c;
     --cor-botao: #4b7f98;
     --cor-hover: #6f8f9b;
     --cor-background: #F8F8FC;
@@ -30,7 +31,7 @@ body {
 
 body, input, button, textarea {
     font: 400 1rem Arimo;
-    color: var(--cor-botao);
+    color: var(--cor-texto);
 }
 
 h1, h2, h3, h4, h5, h6 {

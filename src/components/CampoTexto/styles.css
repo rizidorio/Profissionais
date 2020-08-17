@@ -8,19 +8,19 @@
     width: 100%;
     position: relative;
     outline: none;
-    font-size: 1.2rem;
-    padding: 15px 20px;
+    font-size: 1rem;
+    padding: 0.8rem;
     border: 1px solid var(--cor-hover);
     border-radius: 0.3rem;
     transition: all 0.2s linear;
     -webkit-transition: all 0.2s linear;
     -moz-transition: all 0.2s linear;
     background-color: var(--cor-background-header);
+    margin-bottom: 0.2;
 }
 
 .campos input:focus {
-    border: 2px solid var(--cor-principal);
-   
+    border: 2px solid var(--cor-principal);  
 }
 
 .campos input::placeholder {
@@ -30,19 +30,18 @@
 .campos label {
     pointer-events: none;
     position: absolute;
-    top: calc(50% - 0.4rem);
-    left: 1rem;
+    top: calc(50% - 0.35rem);
+    left: 0.5rem;
     transition: all 0.2s linear;
     -webkit-transition: all 0.2s linear;
     -moz-transition: all 0.2s linear;
-    padding: 0.5rem;
+    padding: 0.5rem 0.2rem;
     box-sizing: border-box;
     font-size: 1rem;
 }
 
 .campos input:focus + label,
 .campos input:not(:placeholder-shown) + label {
-    font-size: 1.1rem;
     font-weight: bold;
     top: 0;
     background-color: var(--cor-background);
@@ -58,16 +57,16 @@
     .campos input {
         font-size: 1.6rem;
         margin-bottom: 1.2rem;
+        padding: 1.5rem;
     }
 
     .campos label {
-        top: calc(50% - 1.2rem);
-        font-size: 1.8rem;
+        top: calc(50% - 1.4rem);
+        font-size: 1.6rem;
     }
 
     .campos input:focus + label,
     .campos input:not(:placeholder-shown) + label {
-        font-size: 1.7rem;
         top: -1px;
     }
 }

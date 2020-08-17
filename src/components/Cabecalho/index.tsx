@@ -2,7 +2,7 @@ import React from 'react';
 import { Link, useHistory } from 'react-router-dom';
 import { FiArrowLeftCircle } from 'react-icons/fi';
 
-import Logo from '../../assets/logo_1200.png';
+import Logo from '../../assets/logo_profissionais.png';
 import './styles.css';
 
 interface CabecalhoProps {

@@ -7,34 +7,109 @@
     padding: 0.8rem;
 }
 
-.form-pesquisa {
-    border-bottom: 1px solid var(--cor-botao);
+#page-list .form-pesquisa {
     width: 100%;
-    margin-bottom: 1.8rem;
 }
 
-.form-pesquisa fieldset {
+#page-list .form-pesquisa fieldset {
     margin-bottom: 1.2rem;
     border: 0;
 }
 
-.form-pesquisa fieldset legend {
+#page-list .form-pesquisa fieldset legend {
     color: var(--cor-titulo);
     font: 700 1.2rem Fira Sans;
     letter-spacing: 0.05rem;
 }
 
+#page-list hr {
+	height: 1px;
+    border-color: var(--cor-botao);
+    border-top: 0;
+}
+
+#page-list .lista-profissionais {
+    margin: 1.2rem 0.4rem;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-wrap: wrap;
+}
+
+#page-list footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#page-list footer p {
+    margin: 0 0.6rem;
+}
+
+#page-list footer a {
+  padding: 0.5rem;
+  background: var(--cor-botao);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--cor-branco);
+  font-weight: 700;
+  transition: background-color 0.4s;
+}
+
+#page-list footer a:hover {
+    background-color: var(--cor-hover);
+    color: var(--cor-principal);
+  }
+
+#page-list footer svg {
+    font-size: 1.2rem;
+    margin-top: 0.2rem;
+    font-weight: 700;
+}
+
+#page-list footer .direita svg {
+    margin-left: 0.3rem;
+}
+
+#page-list footer .esquerda svg {
+    margin-right: 0.3rem;
+}
+
 @media(min-width: 700px) {
-    .form-pesquisa {
+    #page-list .form-pesquisa {
         display: inline;
         text-align: center;
     }
     
-    .form-pesquisa fieldset legend {
+    #page-list .form-pesquisa fieldset legend {
         font-size: 1.8rem;
         text-align: initial;
         margin-left: 3rem;
     }
 
+    #page-list footer {
+        font-size: 1.6rem;
+    }
+
+    #page-list footer a {
+        padding: 0.8rem;
+    }
+
+    #page-list footer p {
+        margin: 0 1.8rem;
+    }
+
+    #page-list footer svg {
+        font-size: 1.8rem;
+        margin-top: 0.4rem;
+    }
+
+    #page-list footer .direita svg {
+        margin-left: 0.6rem;
+    }
     
+    #page-list footer .esquerda svg {
+        margin-right: 0.6rem;
+    }
 }
