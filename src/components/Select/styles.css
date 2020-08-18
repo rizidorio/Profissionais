@@ -1,34 +1,48 @@
 
 .select-block {
     position: relative;
+    margin-top: 0.8rem;
+    text-align: initial;
 }
 
-.select-block + .select-block {
-    margin-top: 1.4rem;
-}
-
-.select-block label {
-    font-size: 1.4rem;
+.select-block label { 
+    left: 0.5rem;
+    padding: 0.5rem 0.2rem;
+    box-sizing: border-box;
+    font-size: 1rem;
 }
 
 .select-block select {
     width: 100%;
-    height: 5.6rem;
-    margin-top: 0.8rem;
-    background: var(--color-input-background);
-    border: 1px solid var(--color-line-in-white);
-    outline: 0;
-    padding: 0 1.6rem;
-    font: 1.6rem Archivo;
+    outline: none;
+    font-size: 1rem;
+    padding: 0.4rem;
+    border: 1px solid var(--cor-hover);
+    color: var(--cor-texto);
+    border-radius: 0.3rem;
+    background-color: var(--cor-background-header);
 }
 
-.select-block:focus-within::after {
-    width: calc(100% - 3.2rem);
-    height: 2px;
-    content: "";
-    background: var(--color-primary-light);
-    position: absolute;
-    left: 1.6rem;
-    right: 1.6rem;
-    bottom: 0;
+.select-block select:hover {
+    border-color: var(--cor-principal);
+}
+
+.select-block option {
+    color: var(--cor-texto);
+}
+
+@media(min-width: 700px) {
+    .select-block {
+        display: inline-block;
+        width: 22%;
+        margin-right: 2.5rem;
+    }
+
+    .select-block select {
+        font-size: 1.6rem;
+    }
+
+    .select-block label {
+        font-size: 1.6rem;
+    }
 }

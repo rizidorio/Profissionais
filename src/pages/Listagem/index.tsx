@@ -1,16 +1,63 @@
-import React from 'react';
+import React, { useState, useEffect, ChangeEvent } from 'react';
 import { RouteComponentProps } from 'react-router-dom';
 import { FiChevronsLeft, FiChevronsRight} from 'react-icons/fi';
+import axios from 'axios';
 
 import Cabecalho from '../../components/Cabecalho';
+import Dados from '../../components/DadosLista';
+import Select from '../../components/Select';
 
 import './styles.css';
-import Dados from '../../components/DadosLista';
-import CampoTexto from '../../components/CampoTexto';
 
-type props = {prof: string};
+interface IBGEUFResponse {
+    sigla: string;
+    nome: string;
+}
 
-const Lista = ({match}: RouteComponentProps<props>) => {
+interface IBGECidadeResponse {
+    nome: string;
+}
+
+const Lista = () => {
+
+    const [ufs, setUfs] = useState<string[]>([]);
+    const [cidades, setCidades] = useState<string[]>([]);
+
+    const [UfSelecionada, setUfSelecionada] = useState('0');
+    const [CidadeSelecionada, setCidadeSelecionada] = useState('0');
+
+    useEffect(() => {
+        axios.get<IBGEUFResponse[]>('https://servicodados.ibge.gov.br/api/v1/localidades/estados').then(response => {
+            const ufInicial = response.data.map(uf => uf.sigla);
+            const nomesUfs = response.data.map(uf => uf.nome);
+
+            setUfs(nomesUfs.sort());
+        });
+    }, []);
+
+    useEffect(() => {
+        if(UfSelecionada === '0') {
+            return;
+        }
+
+        axios.get<IBGECidadeResponse[]>(`https://servicodados.ibge.gov.br/api/v1/localidades/estados/${UfSelecionada}/municipios`).then(response => {
+            const NomesCidades = response.data.map(cidade => cidade.nome);
+
+            setCidades(NomesCidades);
+        });
+
+    }, [UfSelecionada]);
+
+    function handleSelectUf(event: ChangeEvent<HTMLSelectElement>) {
+        const uf = event.target.value;
+        setUfSelecionada(uf);
+    }
+
+    function handleSelectCity(event: ChangeEvent<HTMLSelectElement>) {
+        const city = event.target.value;
+
+        setCidadeSelecionada(city);
+    }
 
     return (
         <div id="page-list">
@@ -19,38 +66,16 @@ const Lista = ({match}: RouteComponentProps<props>) => {
                 <main>
                     <form className="form-pesquisa">
                         <fieldset>
-                            <legend>Filtros pesquisa</legend>
-                            <CampoTexto 
-                                type="text"
-                                id="estado"
-                                placeholder=" "
-                                label="Estado"
-                                name="estado"   
-                            />
-
-                            <CampoTexto 
-                                type="text"
-                                id="cidade"
-                                placeholder=" "
-                                label="Cidade"
-                                name="cidade"   
-                            />
-
-                            <CampoTexto 
-                                type="text"
-                                id="categoria"
-                                placeholder=" "
-                                label="Categoria"
-                                name="categoria"   
-                            />
-
-                            <CampoTexto 
-                                type="text"
-                                id="subcategoria"
-                                placeholder=" "
-                                label="Subcategoria"
-                                name="subcategoria"   
-                            />                           
+                            <legend>Campos pesquisa</legend>
+                            <div className="select-block">
+                                <label htmlFor="uf">Estado</label>
+                                <select name="uf" id="uf" value={UfSelecionada} onChange={handleSelectUf}>
+                                    <option value="0" disabled hidden>Selecione um Estado</option>
+                                    {ufs.map(uf => (
+                                        <option key={uf} value={uf}>{uf}</option>
+                                    ))}
+                                </select>
+                            </div>
                         </fieldset>
                     </form>
                     <hr />

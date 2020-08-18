@@ -18,9 +18,10 @@
 
 #page-list .form-pesquisa fieldset legend {
     color: var(--cor-titulo);
-    font: 700 1.2rem Fira Sans;
+    font: 700 1rem Fira Sans;
     letter-spacing: 0.05rem;
 }
+
 
 #page-list hr {
 	height: 1px;
