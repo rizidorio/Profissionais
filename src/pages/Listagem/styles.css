@@ -5,6 +5,7 @@
 
 #page-list main {
     padding: 0.8rem;
+    text-align: center;
 }
 
 #page-list .form-pesquisa {
@@ -13,6 +14,7 @@
 
 #page-list .form-pesquisa fieldset {
     margin-bottom: 1.2rem;
+    margin-left: 0.2rem;
     border: 0;
 }
 
@@ -20,13 +22,62 @@
     color: var(--cor-titulo);
     font: 700 1rem Fira Sans;
     letter-spacing: 0.05rem;
+    text-align: initial;
 }
 
+#page-list .select-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+#page-list .select-block {
+    position: relative;
+    margin-top: 0.8rem;
+    text-align: initial;
+}
+
+#page-list .select-block label { 
+    box-sizing: border-box;
+    font-size: 1rem;
+    display: block;
+}
+
+#page-list .select-block select {
+    outline: none;
+    font-size: 1rem;
+    padding: 0.4rem 0.1rem;
+    border: 1px solid var(--cor-hover);
+    color: var(--cor-texto);
+    border-radius: 0.3rem;
+    background-color: var(--cor-background-header);
+}
+
+#page-list .select-block #cidades {
+    width: 17rem;
+}
+
+#page-list .select-block #categoria {
+    width: 29.5rem;
+}
+
+#page-list .select-block #subcategoria {
+    width: 29.5rem;
+}
+
+#page-list .select-block select:hover {
+    border-color: var(--cor-principal);
+}
+
+#page-list .select-block option {
+    color: var(--cor-texto);
+}
 
 #page-list hr {
 	height: 1px;
     border-color: var(--cor-botao);
     border-top: 0;
+    margin-bottom: 1.3rem;
 }
 
 #page-list .lista-profissionais {
@@ -48,7 +99,7 @@
 }
 
 #page-list footer a {
-  padding: 0.5rem;
+  padding: 0.4rem 0.6rem;
   background: var(--cor-botao);
   display: flex;
   justify-content: space-between;
@@ -56,6 +107,7 @@
   color: var(--cor-branco);
   font-weight: 700;
   transition: background-color 0.4s;
+  border-radius: 0.3rem;
 }
 
 #page-list footer a:hover {
@@ -82,19 +134,50 @@
         display: inline;
         text-align: center;
     }
+
+    #page-list .form-pesquisa fieldset {
+        display: flex;
+    }
     
     #page-list .form-pesquisa fieldset legend {
         font-size: 1.8rem;
         text-align: initial;
-        margin-left: 3rem;
+    }
+
+    #page-list .select-block {
+        display: inline-block;
+    }
+
+    #page-list .select-block select {
+        font-size: 1.6rem;
+    }
+
+    #page-list .select-block label {
+        font-size: 1.6rem;
+    }
+
+    #page-list .select-block #uf {
+        width: 22rem;
+    }
+
+    #page-list .select-block #cidades {
+        width: 28rem;
+    }
+    
+    #page-list .select-block #categoria {
+        width: 32rem;
+    }
+    
+    #page-list .select-block #subcategoria {
+        width: 32rem;
+    }
+
+    #page-list main h3 {
+        font-size: 1.8rem;
     }
 
     #page-list footer {
         font-size: 1.6rem;
-    }
-
-    #page-list footer a {
-        padding: 0.8rem;
     }
 
     #page-list footer p {

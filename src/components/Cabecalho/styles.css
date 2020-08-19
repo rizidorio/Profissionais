@@ -15,7 +15,7 @@
 
 .header-back-title {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     margin-top: 1.2rem;
     text-align: center;
 }
@@ -24,6 +24,10 @@
     font-size: 1.3rem;
     color: var(--cor-titulo);
     margin-top: 1.5rem;
+    position: absolute;
+    right: 6rem;
+    top: 1.5rem;
+   width: 10rem;
 }
 
 .header-back-title a {
@@ -55,6 +59,9 @@
 
     .header-back-title strong {
         font-size: 2.8rem;
+        right: 0;
+        top: 2.5rem;
+        width: 100%;
     }
 
     .header-back-title a {

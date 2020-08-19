@@ -1,5 +1,5 @@
 import React, { useState, useEffect, ChangeEvent } from 'react';
-import { RouteComponentProps } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { FiChevronsLeft, FiChevronsRight} from 'react-icons/fi';
 import axios from 'axios';
 
@@ -11,7 +11,6 @@ import './styles.css';
 
 interface IBGEUFResponse {
     sigla: string;
-    nome: string;
 }
 
 interface IBGECidadeResponse {
@@ -28,10 +27,9 @@ const Lista = () => {
 
     useEffect(() => {
         axios.get<IBGEUFResponse[]>('https://servicodados.ibge.gov.br/api/v1/localidades/estados').then(response => {
-            const ufInicial = response.data.map(uf => uf.sigla);
-            const nomesUfs = response.data.map(uf => uf.nome);
+            const siglasUfs = response.data.map(uf => uf.sigla);
 
-            setUfs(nomesUfs.sort());
+            setUfs(siglasUfs.sort());
         });
     }, []);
 
@@ -62,23 +60,58 @@ const Lista = () => {
     return (
         <div id="page-list">
             <div id="page-list-content" className="container">
-                <Cabecalho titulo="Pesquisa de profissionais em Volta Redonda"/>
+                <Cabecalho titulo="Listagem de Profissionais"/>
                 <main>
                     <form className="form-pesquisa">
                         <fieldset>
-                            <legend>Campos pesquisa</legend>
-                            <div className="select-block">
-                                <label htmlFor="uf">Estado</label>
-                                <select name="uf" id="uf" value={UfSelecionada} onChange={handleSelectUf}>
-                                    <option value="0" disabled hidden>Selecione um Estado</option>
-                                    {ufs.map(uf => (
-                                        <option key={uf} value={uf}>{uf}</option>
-                                    ))}
-                                </select>
-                            </div>
+                            <legend>Filtros</legend>
+                            <div className="select-container">
+                                <div className="select-block">
+                                    <label htmlFor="uf">Estado</label>
+                                    <select name="uf" id="uf" value={UfSelecionada} onChange={handleSelectUf}>
+                                        <option value="0" disabled hidden>Selecione um Estado</option>
+                                        {ufs.map(uf => (
+                                            <option key={uf} value={uf}>{uf}</option>
+                                        ))}
+                                    </select>
+                                </div>
+                                <div className="select-block">
+                                    <label htmlFor="cidades">Cidade</label>
+                                    <select name="cidades" id="cidades" value={UfSelecionada} onChange={handleSelectCity}>
+                                        <option value="0" disabled hidden>Selecione uma Cidade</option>
+                                        {cidades.map(cidade => (
+                                            <option key={cidade} value={cidade}>{cidade}</option>
+                                        ))}
+                                    </select>
+                                </div>
+                            
+                                <Select 
+                                    name="categoria"
+                                    label="Categoria"
+                                    text="Selecione uma"
+                                    options={[
+                                        {value: '1', label: 'Manutenção'},
+                                        {value: '2', label: 'Cuidados Pessoais'},
+                                        {value: '3', label: 'Transporte'},
+                                        {value: '4', label: 'Ensino'},
+                                    ]}
+                                />
+                                <Select 
+                                    name="subcategoria"
+                                    label="Subcategoria"
+                                    text="Selecione uma"
+                                    options={[
+                                        {value: '1', label: 'Residencial'},
+                                        {value: '2', label: 'Automotiva'},
+                                        {value: '3', label: 'Movéis'},
+                                        {value: '4', label: 'Eletrônica'},
+                                    ]}
+                                /> 
+                                </div>  
                         </fieldset>
                     </form>
                     <hr />
+                    <h3>Manutenção Residencial em Volta Redonda</h3>
                     <section className="lista-profissionais">
                         <Dados 
                             nome="Pintor Teste" 
@@ -142,19 +175,19 @@ const Lista = () => {
                         />
                     </section>
                     <footer>
-                        <a href="/pagina" className="esquerda">
+                        <Link to="/pagina" className="esquerda" aria-disabled>
                             <span>
                                 <FiChevronsLeft />
                             </span>
                             Página anterior
-                        </a>
+                        </Link>
                         <p>1 de 60</p>
-                        <a href="/pagina" className="direita">
+                        <Link to="/pagina" className="direita">
                             Próxima página
                             <span>
                                 <FiChevronsRight />
                             </span>   
-                        </a>
+                        </Link>
                     </footer>
                 </main>
             </div>
