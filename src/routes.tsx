@@ -3,6 +3,7 @@ import { Route, BrowserRouter, Switch } from 'react-router-dom';
 
 import Home from './pages/Home';
 import Lista from './pages/Listagem';
+import SaberMais from './pages/SaberMais';
 
 
 const Routes = () => {
@@ -10,7 +11,8 @@ const Routes = () => {
         <BrowserRouter>
             <Switch>
                 <Route component={Home} path="/" exact />
-                <Route component={Lista} path="/categorias" />
+                <Route component={Lista} path="/pesquisa" />
+                <Route component={SaberMais} path="/saber-mais" />
             </Switch>
         </BrowserRouter>
     );

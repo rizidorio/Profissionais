@@ -1,0 +1,46 @@
+#page-info {
+    width: 100vw;
+    height: 100vh;
+}
+
+#page-info main {
+    background: url('../../assets/fundo_mais.svg') no-repeat center top;
+    background-size: 90%;
+    margin-top: 1.6rem;
+    padding: 0.8rem;
+}
+
+#page-info main h4 {
+    margin: 0 auto;
+    max-width: 26rem;
+    text-align: center;
+}
+
+#page-info main .beneficios {
+    margin: 1.5rem 2rem;
+    text-align: initial;
+    font-weight: 700;  
+}
+
+#page-info main .beneficios p {
+    margin-bottom: 2.5rem;
+}
+
+#page-info .button-cad a {
+    background: var(--cor-botao);
+    height: 2.8rem;
+    color: var(--cor-branco);
+    width: 100%;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    transition: 0.8s;
+    border-radius: 0.3rem;
+    line-height: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 2.3rem;
+}
+
+#page-info main footer {
+    font-size: 0.8rem;
+}
