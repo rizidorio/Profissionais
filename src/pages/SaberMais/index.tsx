@@ -1,11 +1,15 @@
 import React from 'react';
 import Cabecalho from '../../components/Cabecalho';
 
-import imgFundo from '../../assets/monitor.svg';
-
 import './styles.css';
 
 function SaberMais () {
+    const [open, setOpen] = React.useState(false);
+
+    const handleOpen = () => {
+      setOpen(true);
+    };
+
     return(
         <div id="page-info">
             <div id="page-info-content" className="container">
@@ -26,11 +30,11 @@ function SaberMais () {
                     </section>
                     <footer>
                         <p>
-                            <a href="/">Clique aqui </a> 
+                            <a href="/" onClick={handleOpen}>Clique aqui </a> 
                             e conheça todos os planos.
                         </p>
                         <p>
-                            * Planos a partir de R$ 10,00 reais mensais.
+                            * Planos a partir de R$ 10,00 mensais.
                         </p>
                         
                     </footer>

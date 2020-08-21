@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { FiCheckSquare, FiSearch } from 'react-icons/fi';
 
 import logo from '../../assets/logo_profissionais.png';
-import fundo from '../../assets/fundo_home.png';
+import fundo from '../../assets/img_pesquisar_pessoas.svg';
 
 import './styles.css';
 

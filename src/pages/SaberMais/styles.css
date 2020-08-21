@@ -41,6 +41,18 @@
     margin-bottom: 2.3rem;
 }
 
+#page-info .button-cad a:hover {
+    background: var(--cor-hover);
+}
+
 #page-info main footer {
     font-size: 0.8rem;
+}
+
+#page-info main footer a {
+    color: var(--cor-principal);
+}
+
+#page-info main footer a:hover {
+    color: var(--cor-texto);
 }
