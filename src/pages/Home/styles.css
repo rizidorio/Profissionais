@@ -166,3 +166,12 @@
         text-align: initial;
     }
 }
+
+@media (max-width: 400px) {
+    #page-home {
+        padding: 0.2rem;
+    }
+    .botoes-container a {
+        width: 100%;
+    }
+}

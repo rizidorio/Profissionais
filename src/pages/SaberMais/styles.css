@@ -86,3 +86,20 @@
         font-size: 1.2rem;
     }
 }
+
+@media (max-width: 400px) {
+    #page-info main h4 {
+        font-size: 1.3rem;
+        max-width: 22rem;
+        text-align: initial;
+        margin-left: 1.2rem;
+    }
+
+    #page-info main .beneficios {
+        margin-bottom: 3rem;
+    }
+
+    #page-info main .beneficios p {
+        margin-bottom: 1.5rem;
+    }
+}

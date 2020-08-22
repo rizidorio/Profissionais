@@ -192,3 +192,14 @@
         margin-right: 0.6rem;
     }
 }
+
+@media (max-width: 400px) {
+    #page-list main {
+        padding: 0;
+        padding-bottom: 1rem;
+    }
+
+    #page-list .lista-profissionais {
+        margin: 1rem 0;
+    }
+}
