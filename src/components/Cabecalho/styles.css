@@ -34,13 +34,13 @@
     position: absolute;
     right: 8px;
     top: 5px;
-    color: var(--cor-botao);
+    color: var(--cor-texto);
     transition: opacity 0.2s;
     font-size: 1.5rem;
 }
 
 .header-back-title a:hover {
-    opacity: 0.5;
+    opacity: 0.6;
 }
 
 @media(min-width: 700px) {

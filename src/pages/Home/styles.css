@@ -29,18 +29,18 @@
 .login {
     margin: 1.2rem auto 0;
     font-size: 1rem;
-    color: var(--cor-principal);
+    color: var(--cor-texto);
     max-width: 10rem;
 }
 
 .login a {   
-    color: var(--cor-hover);
+    color: var(--cor-principal);
     transition: color 0.2s;
     margin-left: 0.4rem;
 }
 
 .login a:hover {
-    color: var(--cor-principal);
+    color: var(--cor-texto);
 }
 
 .back-img {

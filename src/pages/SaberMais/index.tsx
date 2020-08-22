@@ -26,7 +26,7 @@ function SaberMais () {
                         <p>E muito mais...</p>
                     </section>
                     <section className="button-cad">
-                        <a href="/cadastrar">Cadastrar</a>
+                        <a href="/cadastrar">Cadastre-se</a>
                     </section>
                     <footer>
                         <p>
