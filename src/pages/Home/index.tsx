@@ -16,7 +16,7 @@ const Home = () => {
                     <img src={logo} alt="Logotipo" />
                     <h2>Seu site de pesquisa de profissionais especializados nas mais diversas atividades.</h2>
                 </section>
-                <img src={fundo} alt="Imagem background" className="back-img"/>
+                <img src={fundo} alt="Pesquisa de profissionais" className="back-img"/>
                 <section className="botoes-container">
                     <Link to="/saber-mais">
                         <span>

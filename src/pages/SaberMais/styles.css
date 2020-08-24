@@ -6,18 +6,19 @@
 #page-info main {
     background: url('../../assets/fundo_mais.svg') no-repeat center top;
     background-size: 90%;
-    margin-top: 1.6rem;
-    padding: 0.8rem;
+    padding: 0.5rem;
 }
 
-#page-info main h4 {
+#page-info h4 {
     margin: 0 auto;
-    max-width: 26rem;
+    max-width: 24rem;
     text-align: center;
+    font-size: 1.4rem;
+    padding-top: 0.3rem;
 }
 
 #page-info main .beneficios {
-    margin: 1.5rem 2rem;
+    margin: 2.5rem;
     text-align: initial;
     font-weight: 700;  
 }
@@ -43,7 +44,7 @@
 }
 
 #page-info .button-cad a:hover {
-    opacity: 0.6;
+    opacity: 0.8;
 }
 
 #page-info main footer {
@@ -63,12 +64,11 @@
         background: url('../../assets/monitor.svg') no-repeat 75rem top;
         background-size: 45rem;
         padding: 2.5rem 6.5rem;
-        margin-left: 3.8rem;
     }
 
-    #page-info main h4 {
-        margin: 0;
-        max-width: 60rem;
+    #page-info h4 {
+        margin: 0.8rem auto;
+        max-width: 100%;
         font-size: 2.4rem;
     }
 

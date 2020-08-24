@@ -34,7 +34,7 @@
 
 @media (min-width: 700px) {
     #box-dados {
-        max-width: 28rem;
+        width: 28rem;
         padding: 1.6rem;
         margin-bottom: 3rem;
         margin-right: 3.5rem;

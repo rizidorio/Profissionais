@@ -16,8 +16,8 @@ function SaberMais () {
                 <Cabecalho 
                     titulo="Saiba mais"
                 />
+                <h4>Com uma pequena taxa mensal* você poderá divulgar sua atividade e obter diversos benefícios.</h4>
                 <main>
-                    <h4>Com uma pequena taxa mensal* você poderá divulgar sua atividade e obter diversos benefícios.</h4>
                     <section className="beneficios">
                         <p>- Desconto em diversos fornecedores</p>
                         <p>- Treinamentos exclusivos</p>
