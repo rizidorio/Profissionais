@@ -7,9 +7,19 @@ import api from '../../services/api';
 
 import Cabecalho from '../../components/Cabecalho';
 import Dados from '../../components/DadosLista';
-import Select from '../../components/Select';
 
 import './styles.css';
+
+interface Profissional {
+    id: number,
+    nome: string,
+    cpf: string,
+    bairro: string,
+    cidade: string,
+    celular: string,
+    whatsapp: string,
+    facebook: string,
+}
 
 interface Categoria {
     id: number;
@@ -31,6 +41,7 @@ interface IBGECidadeResponse {
 
 const Lista = () => {
 
+    const [profissionais, setProfissionais] = useState<Profissional[]>([]);
     const [categorias, setCategorias] = useState<Categoria[]>([]);
     const [subcategorias, setSubcategorias] = useState<Subcategoria[]>([]);
 
@@ -44,16 +55,25 @@ const Lista = () => {
     const [CidadeSelecionada, setCidadeSelecionada] = useState('0');
 
     useEffect(() => {
+        if(!subcatSelecionada){
+            api.get(`profissionais?$cidade=${CidadeSelecionada}&categoria=${catSelecionada}$`).then(response => {
+                setProfissionais(response.data);
+            });
+        }
+        
+    }, []);
+
+    useEffect(() => {
         api.get('categorias').then(response => {
             setCategorias(response.data);
-        })
+        });
     }, []);
 
     useEffect(() => {
         if(catSelecionada === '0')
             return;
 
-        axios.get(`subcategorias/${catSelecionada}`).then(response => {
+        api.get(`subcategorias?categoria=${catSelecionada}`).then(response => {
             setSubcategorias(response.data);
         })
     }, [catSelecionada]);
@@ -82,6 +102,13 @@ const Lista = () => {
     function handleSelectCategoria(event: ChangeEvent<HTMLSelectElement>) {
         const cat = event.target.value;
         setCatSelecionada(cat);
+    }
+
+    function handleSelectSubcategoria(event: ChangeEvent<HTMLSelectElement>) {
+        const subcat = event.target.value;
+        setSubcatSelecionada(subcat);
+
+        console.log(subcat);
     }
 
     function handleSelectUf(event: ChangeEvent<HTMLSelectElement>) {
@@ -133,37 +160,14 @@ const Lista = () => {
                                 
                                 <div className="select-block">
                                     <label htmlFor="subcategorias">Subcategorias</label>
-                                    <select name="subcategorias" id="subcategorias" value={catSelecionada} onChange={handleSelectCategoria}>
+                                    <select name="subcategorias" id="subcategorias" value={subcatSelecionada} onChange={handleSelectSubcategoria}>
                                         <option value="0" hidden>Selecione uma Subcategoria</option>
                                         {subcategorias.map(subcategoria => (
                                             <option key={subcategoria.id} value={subcategoria.id}>{subcategoria.nome}</option>
                                         ))}
                                     </select>
                                 </div>
-                            
-                                {/* <Select 
-                                    name="categoria"
-                                    label="Categoria"
-                                    text="Selecione uma"
-                                    options={[
-                                        {value: '1', label: 'Manutenção'},
-                                        {value: '2', label: 'Cuidados Pessoais'},
-                                        {value: '3', label: 'Transporte'},
-                                        {value: '4', label: 'Ensino'},
-                                    ]}
-                                /> 
-                                <Select 
-                                    name="subcategoria"
-                                    label="Subcategoria"
-                                    text="Selecione uma"
-                                    options={[
-                                        {value: '1', label: 'Residencial'},
-                                        {value: '2', label: 'Automotiva'},
-                                        {value: '3', label: 'Movéis'},
-                                        {value: '4', label: 'Eletrônica'},
-                                    ]}
-                                /> */}
-                                </div>  
+                            </div>  
                         </fieldset>
                     </form>
                     <hr />
