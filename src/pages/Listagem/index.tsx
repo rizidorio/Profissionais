@@ -49,19 +49,20 @@ const Lista = () => {
     const [cidades, setCidades] = useState<string[]>([]);
 
     const [catSelecionada, setCatSelecionada] = useState('0');
+    const [catNomeSelecionada, setCatNomeSelecionada] = useState('0');
     const [subcatSelecionada, setSubcatSelecionada] = useState('0');
 
     const [UfSelecionada, setUfSelecionada] = useState('0');
     const [CidadeSelecionada, setCidadeSelecionada] = useState('0');
 
     useEffect(() => {
-        if(!subcatSelecionada){
-            api.get(`profissionais?$cidade=${CidadeSelecionada}&categoria=${catSelecionada}$`).then(response => {
-                setProfissionais(response.data);
-            });
-        }
-        
-    }, []);
+        if(catSelecionada === '0')
+            return;
+
+        api.get(`profissionais?cidade=${CidadeSelecionada}&categoria=${catSelecionada}`).then(response => {
+            setProfissionais(response.data);
+        });             
+    }, [CidadeSelecionada, catSelecionada]);
 
     useEffect(() => {
         api.get('categorias').then(response => {
@@ -100,23 +101,26 @@ const Lista = () => {
     }, [UfSelecionada]);
 
     function handleSelectCategoria(event: ChangeEvent<HTMLSelectElement>) {
+        event.preventDefault();
         const cat = event.target.value;
         setCatSelecionada(cat);
     }
 
     function handleSelectSubcategoria(event: ChangeEvent<HTMLSelectElement>) {
+        event.preventDefault();
         const subcat = event.target.value;
-        setSubcatSelecionada(subcat);
-
-        console.log(subcat);
+        setSubcatSelecionada(subcat);    
     }
 
     function handleSelectUf(event: ChangeEvent<HTMLSelectElement>) {
+        event.preventDefault();
         const uf = event.target.value;
         setUfSelecionada(uf);
+        console.log(UfSelecionada);
     }
 
     function handleSelectCity(event: ChangeEvent<HTMLSelectElement>) {
+        event.preventDefault();
         const city = event.target.value;
         setCidadeSelecionada(city);
     }
@@ -151,17 +155,16 @@ const Lista = () => {
                                 <div className="select-block">
                                     <label htmlFor="categorias">Categorias</label>
                                     <select name="categorias" id="categorias" value={catSelecionada} onChange={handleSelectCategoria}>
-                                        <option value="0" hidden>Selecione uma Categoria</option>
+                                        <option value="0" disabled hidden>Selecione uma Categoria</option>
                                         {categorias.map(categoria => (
                                             <option key={categoria.id} value={categoria.id}>{categoria.nome}</option>
                                         ))}
                                     </select>
-                                </div>
-                                
+                                </div>                              
                                 <div className="select-block">
                                     <label htmlFor="subcategorias">Subcategorias</label>
                                     <select name="subcategorias" id="subcategorias" value={subcatSelecionada} onChange={handleSelectSubcategoria}>
-                                        <option value="0" hidden>Selecione uma Subcategoria</option>
+                                        <option value="0">Todas subcategorias</option>
                                         {subcategorias.map(subcategoria => (
                                             <option key={subcategoria.id} value={subcategoria.id}>{subcategoria.nome}</option>
                                         ))}
@@ -171,68 +174,18 @@ const Lista = () => {
                         </fieldset>
                     </form>
                     <hr />
-                    <h3>Manutenção Residencial em Volta Redonda</h3>
+                    <h3>{CidadeSelecionada} em {catSelecionada}</h3>
                     <section className="lista-profissionais">
-                        <Dados 
-                            nome="Pintor Teste" 
-                            bairro="Centro" 
-                            contato="(24)99999-9999"
-                            whats="+5524999999999"
-                            face="teste"
-                        />
-                        <Dados 
-                            nome="Pintor Teste" 
-                            bairro="Centro" 
-                            contato="(24)99999-9999"
-                            whats="+5524999999999"
-                            face="teste"
-                        />
-
-                        <Dados 
-                            nome="Pintor Teste" 
-                            bairro="Centro" 
-                            contato="(24)99999-9999"
-                            whats="+5524999999999"
-                            face="teste"
-                        />
-
-                        <Dados 
-                            nome="Pintor Teste" 
-                            bairro="Centro" 
-                            contato="(24)99999-9999"
-                            whats="+5524999999999"
-                            face="teste"
-                        />
-
-                        <Dados 
-                            nome="Pintor Teste" 
-                            bairro="Centro" 
-                            contato="(24)99999-9999"
-                            whats="+5524999999999"
-                            face="teste"
-                        />
-
-                        <Dados 
-                            nome="Pintor Teste" 
-                            bairro="Centro" 
-                            contato="(24)99999-9999"
-                            whats="+5524999999999"
-                            face="teste"
-                        />
-                          <Dados 
-                            nome="Pintor Teste" 
-                            bairro="Centro" 
-                            contato="(24)99999-9999"
-                            whats="+5524999999999"
-                            face="teste"
-                        />
-                          <Dados 
-                            nome="Pintor Teste" 
-                            bairro="Centro" 
-                            contato="(24)99999-9999"
-                            whats="+5524999999999"
-                            face="teste"
-                        />
+                        {profissionais.map(profissional => (
+                            <Dados
+                                key={profissional.id}
+                                nome={profissional.nome}
+                                bairro={profissional.bairro}
+                                contato={profissional.celular}
+                                whats={profissional.whatsapp}
+                                face={profissional.facebook}
+                            />
+                        ))}
                     </section>
                     <footer>
                         <Link to="/pagina" className="esquerda" aria-disabled>
