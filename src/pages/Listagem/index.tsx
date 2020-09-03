@@ -9,6 +9,7 @@ import Cabecalho from '../../components/Cabecalho';
 import Dados from '../../components/DadosLista';
 
 import './styles.css';
+import { notEqual } from 'assert';
 
 interface Profissional {
     id: number,
@@ -49,7 +50,7 @@ const Lista = () => {
     const [cidades, setCidades] = useState<string[]>([]);
 
     const [catSelecionada, setCatSelecionada] = useState('0');
-    const [catNomeSelecionada, setCatNomeSelecionada] = useState('0');
+    const [nomeCatSelecionada, setNomeCatSelecionada] = useState('Selecione uma categoria para exibir a lista');
     const [subcatSelecionada, setSubcatSelecionada] = useState('0');
 
     const [UfSelecionada, setUfSelecionada] = useState('0');
@@ -103,6 +104,35 @@ const Lista = () => {
     function handleSelectCategoria(event: ChangeEvent<HTMLSelectElement>) {
         event.preventDefault();
         const cat = event.target.value;
+
+        let nomeCat = '';
+        switch(Number(cat)){
+            case 1: 
+                nomeCat = 'Manutenção Residencial';
+                break;
+            case 2:
+                nomeCat = 'Manutenção Automotiva';
+                break;
+            case 3:
+                nomeCat = 'Manutenção Eletrônica';
+                break;
+            case 4:
+                nomeCat = 'Informática';
+                break;
+            case 5:
+                nomeCat = 'Cuidados Pessoais';
+                break;
+            case 6:
+                nomeCat = 'Trasnportes';
+                break;
+            default:
+                nomeCat = 'Selecione uma categoria';
+                break;
+        }
+
+        console.log(cat);
+        console.log(nomeCat);
+        setNomeCatSelecionada(nomeCat);
         setCatSelecionada(cat);
     }
 
@@ -174,7 +204,12 @@ const Lista = () => {
                         </fieldset>
                     </form>
                     <hr />
-                    <h3>{CidadeSelecionada} em {catSelecionada}</h3>
+                    {
+                        CidadeSelecionada === '0' || catSelecionada === '0' ?
+                        <h3>{nomeCatSelecionada}</h3> :
+                        <h3>{nomeCatSelecionada} em {CidadeSelecionada}</h3>
+                    }                       
+                    
                     <section className="lista-profissionais">
                         {profissionais.map(profissional => (
                             <Dados
