@@ -20,6 +20,7 @@ interface Profissional {
     celular: string,
     whatsapp: string,
     facebook: string,
+    subcategorias: [string],
 }
 
 interface Categoria {
@@ -57,13 +58,14 @@ const Lista = () => {
     const [CidadeSelecionada, setCidadeSelecionada] = useState('0');
 
     useEffect(() => {
-        if(catSelecionada === '0')
-            return;
+        let data;
 
-        api.get(`profissionais?cidade=${CidadeSelecionada}&categoria=${catSelecionada}`).then(response => {
-            setProfissionais(response.data);
-        });             
-    }, [CidadeSelecionada, catSelecionada]);
+        subcatSelecionada === '0' ? data = api.get(`profissionais?cidade=${CidadeSelecionada}&categoria=${catSelecionada}`) :
+                                    data = api.get(`profissionais?cidade=${CidadeSelecionada}&categoria=${catSelecionada}&subcategoria=${subcatSelecionada}`);
+            data.then(response => {
+                setProfissionais(response.data);
+        });
+    }, [CidadeSelecionada, catSelecionada, subcatSelecionada]);
 
     useEffect(() => {
         api.get('categorias').then(response => {
@@ -77,7 +79,7 @@ const Lista = () => {
 
         api.get(`subcategorias?categoria=${catSelecionada}`).then(response => {
             setSubcategorias(response.data);
-        })
+        });
     }, [catSelecionada]);
 
     useEffect(() => {
@@ -129,9 +131,6 @@ const Lista = () => {
                 nomeCat = 'Selecione uma categoria';
                 break;
         }
-
-        console.log(cat);
-        console.log(nomeCat);
         setNomeCatSelecionada(nomeCat);
         setCatSelecionada(cat);
     }
@@ -158,47 +157,50 @@ const Lista = () => {
     return (
         <div id="page-list">
             <div id="page-list-content" className="container">
-                <Cabecalho titulo="Listagem de Profissionais"/>
+                <Cabecalho titulo="Lista de Profissionais"/>
                 <main>
                     <form className="form-pesquisa">
                         <fieldset>
-                            <legend>Filtros</legend>
                             <div className="select-container">
-                                <div className="select-block">
-                                    <label htmlFor="uf">Estado</label>
-                                    <select name="uf" id="uf" value={UfSelecionada} onChange={handleSelectUf}>
-                                        <option value="0" hidden>Selecione um Estado</option>
-                                        {ufs.map(uf => (
-                                            <option key={uf} value={uf}>{uf}</option>
-                                        ))}
-                                    </select>
+                                <div className="select-local">
+                                    <div className="select-block">
+                                        <label htmlFor="uf">Estado</label>
+                                        <select name="uf" id="uf" value={UfSelecionada} onChange={handleSelectUf}>
+                                            <option value="0" hidden>Selecione um Estado</option>
+                                            {ufs.map(uf => (
+                                                <option key={uf} value={uf}>{uf}</option>
+                                            ))}
+                                        </select>
+                                    </div>
+                                    <div className="select-block">
+                                        <label htmlFor="cidades">Cidade</label>
+                                        <select name="cidades" id="cidades" value={CidadeSelecionada} onChange={handleSelectCity}>
+                                            <option value="0" disabled hidden>Selecione uma Cidade</option>
+                                            {cidades.map(cidade => (
+                                                <option key={cidade} value={cidade}>{cidade}</option>
+                                            ))}
+                                        </select>
+                                    </div>
                                 </div>
-                                <div className="select-block">
-                                    <label htmlFor="cidades">Cidade</label>
-                                    <select name="cidades" id="cidades" value={CidadeSelecionada} onChange={handleSelectCity}>
-                                        <option value="0" disabled hidden>Selecione uma Cidade</option>
-                                        {cidades.map(cidade => (
-                                            <option key={cidade} value={cidade}>{cidade}</option>
-                                        ))}
-                                    </select>
-                                </div>
-                                <div className="select-block">
-                                    <label htmlFor="categorias">Categorias</label>
-                                    <select name="categorias" id="categorias" value={catSelecionada} onChange={handleSelectCategoria}>
-                                        <option value="0" disabled hidden>Selecione uma Categoria</option>
-                                        {categorias.map(categoria => (
-                                            <option key={categoria.id} value={categoria.id}>{categoria.nome}</option>
-                                        ))}
-                                    </select>
-                                </div>                              
-                                <div className="select-block">
-                                    <label htmlFor="subcategorias">Subcategorias</label>
-                                    <select name="subcategorias" id="subcategorias" value={subcatSelecionada} onChange={handleSelectSubcategoria}>
-                                        <option value="0">Todas subcategorias</option>
-                                        {subcategorias.map(subcategoria => (
-                                            <option key={subcategoria.id} value={subcategoria.id}>{subcategoria.nome}</option>
-                                        ))}
-                                    </select>
+                                <div className="select-categoria">
+                                    <div className="select-block">
+                                        <label htmlFor="categorias">Categorias</label>
+                                        <select name="categorias" id="categorias" value={catSelecionada} onChange={handleSelectCategoria}>
+                                            <option value="0" disabled hidden>Selecione uma Categoria</option>
+                                            {categorias.map(categoria => (
+                                                <option key={categoria.id} value={categoria.id}>{categoria.nome}</option>
+                                            ))}
+                                        </select>
+                                    </div>                              
+                                    <div className="select-block">
+                                        <label htmlFor="subcategorias">Serviços</label>
+                                        <select name="subcategorias" id="subcategorias" value={subcatSelecionada} onChange={handleSelectSubcategoria}>
+                                            <option value="0">Todos Serviços</option>
+                                            {subcategorias.map(subcategoria => (
+                                                <option key={subcategoria.id} value={subcategoria.id}>{subcategoria.nome}</option>
+                                            ))}
+                                        </select>
+                                    </div>
                                 </div>
                             </div>  
                         </fieldset>
@@ -206,8 +208,8 @@ const Lista = () => {
                     <hr />
                     {
                         CidadeSelecionada === '0' || catSelecionada === '0' ?
-                        <h3>{nomeCatSelecionada}</h3> :
-                        <h3>{nomeCatSelecionada} em {CidadeSelecionada}</h3>
+                        <h3>{nomeCatSelecionada}</h3> : 
+                        <h3>{nomeCatSelecionada} em {CidadeSelecionada}</h3> 
                     }                       
                     
                     <section className="lista-profissionais">
@@ -219,10 +221,20 @@ const Lista = () => {
                                 contato={profissional.celular}
                                 whats={profissional.whatsapp}
                                 face={profissional.facebook}
+                                subcategorias={profissional.subcategorias}
                             />
                         ))}
+                        {/* <Dados 
+                            nome="Teste"
+                            bairro="Centro"
+                            contato="(24)99999-9999"
+                            whats="24999999999"
+                            face="teste"
+                            subcategorias = "Pedreiro alvenaria, Pedreiro Acabamento"
+                        /> */}
+                        
                     </section>
-                    <footer>
+                    {/* <footer>
                         <Link to="/pagina" className="esquerda" aria-disabled>
                             <span>
                                 <FiChevronsLeft />
@@ -236,7 +248,7 @@ const Lista = () => {
                                 <FiChevronsRight />
                             </span>   
                         </Link>
-                    </footer>
+                    </footer> */}
                 </main>
             </div>
         </div>

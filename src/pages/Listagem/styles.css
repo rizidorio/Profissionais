@@ -18,22 +18,25 @@
     border: 0;
 }
 
-#page-list .form-pesquisa fieldset legend {
-    color: var(--cor-titulo);
-    font: 700 1rem Fira Sans;
-    letter-spacing: 0.05rem;
-    text-align: initial;
+#page-list .select-container {
+  margin: 0.5rem auto;
 }
 
-#page-list .select-container {
+#page-list .select-local {
     display: flex;
     justify-content: space-between;
-    flex-wrap: wrap;
+    width: 100%;
+    margin-bottom: 1.5rem;
+}
+
+#page-list .select-categoria {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
 }
 
 #page-list .select-block {
     position: relative;
-    margin-top: 0.8rem;
     text-align: initial;
 }
 
@@ -46,23 +49,12 @@
 #page-list .select-block select {
     outline: none;
     font-size: 1rem;
-    padding: 0.4rem 0.1rem;
+    padding: 0.5rem;
     border: 1px solid var(--cor-texto);
     color: var(--cor-texto);
     border-radius: 0.3rem;
     background-color: var(--cor-background-header);
-}
-
-#page-list .select-block #cidades {
-    width: 17rem;
-}
-
-#page-list .select-block #categoria {
-    width: 29.5rem;
-}
-
-#page-list .select-block #subcategoria {
-    width: 29.5rem;
+    min-width: 15rem;
 }
 
 #page-list .select-block option {
@@ -133,10 +125,18 @@
     #page-list .form-pesquisa fieldset {
         display: flex;
     }
-    
-    #page-list .form-pesquisa fieldset legend {
-        font-size: 1.8rem;
-        text-align: initial;
+
+    #page-list .select-container {
+        display: flex;
+    }
+
+    #page-list .select-local {
+        justify-content: space-around;
+        margin: 0;
+    }
+
+      #page-list .select-categoria {
+        justify-content: space-around;
     }
 
     #page-list .select-block {
@@ -145,26 +145,11 @@
 
     #page-list .select-block select {
         font-size: 1.6rem;
+        width: 28rem;
     }
 
     #page-list .select-block label {
         font-size: 1.6rem;
-    }
-
-    #page-list .select-block #uf {
-        width: 22rem;
-    }
-
-    #page-list .select-block #cidades {
-        width: 28rem;
-    }
-    
-    #page-list .select-block #categoria {
-        width: 32rem;
-    }
-    
-    #page-list .select-block #subcategoria {
-        width: 32rem;
     }
 
     #page-list main h3 {

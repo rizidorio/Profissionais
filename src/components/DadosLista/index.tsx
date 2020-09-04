@@ -13,15 +13,17 @@ interface DadosProps {
     bairro: string,
     whats: string,
     face: string,
+    subcategorias: [string],
 }
 
-const Dados: React.FC<DadosProps> = ({nome, contato, bairro, whats, face}) => {
+const Dados: React.FC<DadosProps> = ({nome, contato, bairro, whats, face, subcategorias}) => {
     return (
         <article id="box-dados">
             <section className="dados">
                 <p>Nome: <strong>{nome}</strong></p>
                 <p>Contato: <strong>{contato}</strong></p>
-                <p>Bairro: <strong>{bairro}<br /></strong></p>
+                <p>Bairro: <strong>{bairro}</strong></p>
+                <p>Serviços: <strong>{subcategorias}</strong></p>
             </section>
             <section className="redesSociais">
                 <Link to={`/${whats}`}>

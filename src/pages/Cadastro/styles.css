@@ -2,3 +2,22 @@
     width: 100vw;
     height: 100vh;
 }
+
+#page-cadastro main {
+    max-width: 28rem;
+    margin: 0.5rem auto;
+}
+
+#page-cadastro fieldset {
+    margin-bottom: 2rem;
+    border: 0;
+}
+
+#page-cadastro fieldset legend {
+    margin: 0;
+    padding: 0;
+    color: var(--cor-titulo);
+    font-weight: 600;
+    padding-inline-start: 0;
+    padding-inline-end: 0;
+}

@@ -1,7 +1,7 @@
 
 .campos {
     position: relative;
-    padding-top: 1.3rem;
+    padding-top: 1rem;
 }
 
 .campos input {
@@ -16,7 +16,6 @@
     -webkit-transition: all 0.2s linear;
     -moz-transition: all 0.2s linear;
     background-color: var(--cor-background-header);
-    margin-bottom: 0.2;
 }
 
 .campos input:focus {
@@ -30,7 +29,7 @@
 .campos label {
     pointer-events: none;
     position: absolute;
-    top: calc(50% - 0.35rem);
+    top: calc(50% - 0.45rem);
     left: 0.5rem;
     transition: all 0.2s linear;
     -webkit-transition: all 0.2s linear;
