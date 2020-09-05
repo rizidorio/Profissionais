@@ -49,23 +49,23 @@
 @media(min-width: 700px) {
     .campos {
         display: inline-block;
-        width: 22%;
         margin-right: 2.5rem;
     }
 
     .campos input {
-        font-size: 1.6rem;
+        font-size: 1.5rem;
         margin-bottom: 1.2rem;
-        padding: 1.5rem;
+        padding: 1.2rem;
+        width: 30rem;
     }
 
     .campos label {
-        top: calc(50% - 1.4rem);
-        font-size: 1.6rem;
+        top: calc(50% - 1.5rem);
+        font-size: 1.5rem;
     }
 
     .campos input:focus + label,
     .campos input:not(:placeholder-shown) + label {
-        top: -1px;
+        top: -0.3rem;
     }
 }

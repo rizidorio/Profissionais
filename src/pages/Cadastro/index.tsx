@@ -1,10 +1,16 @@
-import React from 'react';
+import React, { FormEvent } from 'react';
 import Cabecalho from '../../components/Cabecalho';
 import Campo from '../../components/CampoTexto';
+
 import './styles.css';
 
 
 const Cadastro = () => {
+
+    // async function handleSubmit(event: FormEvent) {
+    //     event.preventDefault();
+
+    // }
     return(
         <div id="page-cadastro">
             <div id="page-cadastro-content" className="container">
@@ -89,7 +95,11 @@ const Cadastro = () => {
                             placeholder="Facebook"
                             type="email"
                         />
-                        </fieldset>       
+                        </fieldset>
+                        <fieldset>
+                            <legend>Seus serviços</legend>
+                        </fieldset>
+                        <button type="submit">Salvar</button>
                     </form>
                 </main>
             </div>
