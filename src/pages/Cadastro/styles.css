@@ -25,6 +25,7 @@
 #page-cadastro .select-block {
     position: relative;
     text-align: initial;
+    margin-bottom: 1rem;
 }  
 
 #page-cadastro .select-block select {
@@ -41,6 +42,24 @@
 
 #page-cadastro .select-block option {
     color: var(--cor-texto);
+}
+
+#page-cadastro .check-subcategorias {
+    font-size: 1rem;
+    margin-top: 0.5rem;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+#page-cadastro .check-subcategorias label {
+    margin-right: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+#page-cadastro .check-subcategorias input {
+    margin-right: 0.2rem;
 }
 
 #page-cadastro form button {
@@ -76,6 +95,30 @@
         margin-left: 7.5rem;
         margin-bottom: 0.5rem;
         font-size: 1.6rem;
+    }
+
+    #page-cadastro .select-block select {
+        font-size: 1.5rem;
+        width: 78%;
+        margin-left: 7.5rem;
+    }
+
+    #page-cadastro h4 {
+        text-align: initial;
+        font-size: 1.6rem;
+        margin-left: 7.5rem;
+        margin-top: 2rem;
+    }
+
+    #page-cadastro .check-subcategorias {
+        font-size: 1.5rem;
+        width: 78%;
+        margin-left: 7.5rem;
+        margin-top: 1.2rem;
+    }
+
+    #page-cadastro .check-subcategorias input {
+        margin-right: 0.6rem;
     }
 
     #page-cadastro form button {

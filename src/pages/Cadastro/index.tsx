@@ -1,9 +1,9 @@
 import React, { FormEvent, useState, useEffect, ChangeEvent } from 'react';
 import Cabecalho from '../../components/Cabecalho';
 import Campo from '../../components/CampoTexto';
+import api from '../../services/api';
 
 import './styles.css';
-import api from '../../services/api';
 
 interface Categoria {
     id: number;
@@ -22,7 +22,7 @@ const Cadastro = () => {
     const [subcategorias, setSubcategorias] = useState<Subcategoria[]>([]);
 
     const [catSelecionada, setCatSelecionada] = useState('0');
-    const [subcatsSelecionada, setSubcatsSelecionada] = useState([]);
+    const [subcatsSelecionada, setSubcatsSelecionada] = useState<number[]>([]);
 
     useEffect(() => {
         api.get('categorias').then(response => {
@@ -45,11 +45,17 @@ const Cadastro = () => {
         setCatSelecionada(cat);
     }
 
-    // function handleCheckedSubcategoria(event: ChangeEvent<HTMLInputElement>) {
-    //     event.preventDefault();
-    //     const subcat = event.target.value;
-    //     setSubcatsSelecionada(subcat);    
-    // }
+    function handleCheckedSubcategoria(id: number) {
+        const selecionados = subcatsSelecionada.findIndex(sub => sub === id);
+
+        if(selecionados >= 0) {
+            const filtrado = subcatsSelecionada.filter(sub => sub !== id);
+
+            setSubcatsSelecionada(filtrado);
+        } else {
+            setSubcatsSelecionada([...subcatsSelecionada, id]);
+        }
+    }
 
     // async function handleSubmit(event: FormEvent) {
     //     event.preventDefault();
@@ -141,7 +147,6 @@ const Cadastro = () => {
                         />
                         </fieldset>
                         <fieldset>
-                            <legend>Seus serviços</legend>
                             <div className="select-categoria">
                                     <div className="select-block">
                                         <label htmlFor="categorias"></label>
@@ -151,25 +156,20 @@ const Cadastro = () => {
                                                 <option key={categoria.id} value={categoria.id}>{categoria.nome}</option>
                                             ))}
                                         </select>
-                                    </div>  
-                                    <div>
-                                        <h5>Serviços realizados</h5>
-                                        {subcategorias.map(subcategoria => (
-                                                <label>
-                                                    <input type="checkbox" key={subcategoria.id} value={subcategoria.id} />
-                                                    {subcategoria.nome}    
-                                                </label>
-                                            ))}
-                                    </div>                            
-                                    {/* <div className="select-block">
-                                        <label htmlFor="subcategorias"></label>
-                                        <select name="subcategorias" id="subcategorias" value={subcatSelecionada} onChange={handleSelectSubcategoria}>
-                                            <option value="0">Selecione os Serviços</option>
+                                    </div> 
+                                    {catSelecionada === '0' ? 
+                                    <h4>Selecione uma categoria para exibir os serviços</h4> : 
+                                    <h4>Serviços realizados</h4>
+                                    } 
+                                        
+                                        <div className="check-subcategorias">
                                             {subcategorias.map(subcategoria => (
-                                                <option key={subcategoria.id} value={subcategoria.id}>{subcategoria.nome}</option>
-                                            ))}
-                                        </select>
-                                    </div> */}
+                                                    <label key={subcategoria.id}>
+                                                        <input type="checkbox" key={subcategoria.id} value={subcategoria.id} onClick={() => handleCheckedSubcategoria(subcategoria.id)} />
+                                                        {subcategoria.nome}    
+                                                    </label>
+                                                ))}
+                                        </div>                           
                                 </div>
                         </fieldset>
                         <button type="submit">Salvar</button>
