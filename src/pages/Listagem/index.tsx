@@ -9,7 +9,7 @@ import Cabecalho from '../../components/Cabecalho';
 import Dados from '../../components/DadosLista';
 
 import './styles.css';
-import { notEqual } from 'assert';
+import Select from '../../components/Select';
 
 interface Profissional {
     id: number,
