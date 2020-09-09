@@ -5,6 +5,8 @@ import Campo from '../../components/CampoTexto';
 import api from '../../services/api';
 
 import './styles.css';
+import { useHistory } from 'react-router-dom';
+
 
 interface Categoria {
     id: number;
@@ -17,6 +19,7 @@ interface Subcategoria {
 }
 
 const Cadastro = () => {
+    const history = useHistory();
 
     const [categorias, setCategorias] = useState<Categoria[]>([]);
     const [subcategorias, setSubcategorias] = useState<Subcategoria[]>([]);
@@ -115,7 +118,7 @@ const Cadastro = () => {
         }
 
         await api.post('profissionais', data).then((res) => {
-            console.log('Sucesso: ', res);
+            history.push('/cadastroRealizado');
         }).catch((err) => {
             console.log('Erro: ', err);
         });

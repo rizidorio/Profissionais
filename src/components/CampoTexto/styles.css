@@ -16,6 +16,7 @@
     -webkit-transition: all 0.2s linear;
     -moz-transition: all 0.2s linear;
     background-color: var(--cor-background-header);
+    margin-bottom: 0.5rem;
 }
 
 .campos input:focus {
@@ -29,12 +30,12 @@
 .campos label {
     pointer-events: none;
     position: absolute;
-    top: calc(50% - 0.45rem);
+    top: calc(50% - 0.5rem);
     left: 0.5rem;
     transition: all 0.2s linear;
     -webkit-transition: all 0.2s linear;
     -moz-transition: all 0.2s linear;
-    padding: 0.5rem 0.2rem;
+    padding: 0.3rem;
     box-sizing: border-box;
     font-size: 1rem;
 }
@@ -43,7 +44,7 @@
 .campos input:not(:placeholder-shown) + label {
     font-weight: bold;
     top: 0;
-    background-color: var(--cor-background);
+    background-color: var(--cor-background-header);
 }
 
 @media(min-width: 700px) {

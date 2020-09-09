@@ -1,0 +1,19 @@
+#page-cadastro-realizado {
+    width: 100vw;
+    height: 100vh;
+
+    text-align: center;
+}
+
+#page-cadastro-realizado header {
+    margin-bottom: 3rem;
+}
+
+#page-cadastro-realizado main h1 {
+    margin-bottom: 0.8rem;
+}
+
+#page-cadastro-realizado main img {
+    width: 25rem;
+    margin: 5rem auto;
+}
