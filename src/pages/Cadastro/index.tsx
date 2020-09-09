@@ -1,4 +1,5 @@
 import React, { FormEvent, useState, useEffect, ChangeEvent } from 'react';
+
 import Cabecalho from '../../components/Cabecalho';
 import Campo from '../../components/CampoTexto';
 import api from '../../services/api';
@@ -15,7 +16,6 @@ interface Subcategoria {
     nome: string;
 }
 
-
 const Cadastro = () => {
 
     const [categorias, setCategorias] = useState<Categoria[]>([]);
@@ -23,6 +23,19 @@ const Cadastro = () => {
 
     const [catSelecionada, setCatSelecionada] = useState('0');
     const [subcatsSelecionada, setSubcatsSelecionada] = useState<number[]>([]);
+
+    const [formData, setFormData] = useState({
+        nome: '',
+        cpf: '',
+        cep: '',
+        bairro: '',
+        cidade: '',
+        uf: '',
+        celular: '',
+        whatsapp: '',
+        email: '',
+        facebook: '',
+    });
 
     useEffect(() => {
         api.get('categorias').then(response => {
@@ -57,16 +70,62 @@ const Cadastro = () => {
         }
     }
 
-    // async function handleSubmit(event: FormEvent) {
-    //     event.preventDefault();
+    function handleInputChange(event: ChangeEvent<HTMLInputElement>) {
+        const {name, value} = event.target;
 
-    // }
+        setFormData({...formData, [name]: value});
+    }
+
+    async function handleSubmit(event: FormEvent) {
+        event.preventDefault();
+
+        const { nome, cpf, cep, bairro, cidade, uf, celular, whatsapp, email, facebook } = formData;
+
+        const categoria = catSelecionada;
+        const subcategorias = subcatsSelecionada;
+
+        // const data = new FormData();
+
+        // data.append('nome', nome);
+        // data.append('cpf', cpf);
+        // data.append('cep', cep);
+        // data.append('bairro', bairro);
+        // data.append('cidade', cidade);
+        // data.append('uf', uf);
+        // data.append('celular', celular);
+        // data.append('whatsapp', whatsapp);
+        // data.append('email', email);
+        // data.append('facebook', facebook);
+        // data.append('categoria', categoria);
+        // data.append('subcategorias', subcategorias.join(','));
+
+        const data = {
+            nome: nome,
+            cpf: cpf,
+            cep: cep, 
+            bairro: bairro, 
+            cidade: cidade, 
+            uf: uf, 
+            celular: celular, 
+            whatsapp: whatsapp, 
+            email: email, 
+            facebook: facebook,
+            categoria: categoria,
+            subcategorias: subcategorias.join(',')
+        }
+
+        await api.post('profissionais', data).then((res) => {
+            console.log('Sucesso: ', res);
+        }).catch((err) => {
+            console.log('Erro: ', err);
+        });
+    }
     return(
         <div id="page-cadastro">
             <div id="page-cadastro-content" className="container">
                 <Cabecalho titulo="Cadastro" />
                 <main>
-                    <form className="form-cadastro">
+                    <form className="form-cadastro" onSubmit={handleSubmit}>
                         <fieldset>
                             <legend>Seus dados pessoais</legend>
                             <Campo 
@@ -75,6 +134,7 @@ const Cadastro = () => {
                             label="Nome completo"
                             placeholder="Nome completo"
                             type="text"
+                            onChange={handleInputChange}
                         />
                         <Campo 
                             id="cpf"
@@ -82,6 +142,7 @@ const Cadastro = () => {
                             label="CPF"
                             placeholder="CPF"
                             type="text"
+                            onChange={handleInputChange}
                         />
                         </fieldset>
                        <fieldset>
@@ -92,6 +153,7 @@ const Cadastro = () => {
                             label="CEP"
                             placeholder="CEP"
                             type="text"
+                            onChange={handleInputChange}
                         />
                         <Campo 
                             id="bairro"
@@ -99,6 +161,7 @@ const Cadastro = () => {
                             label="Bairro"
                             placeholder="Bairro"
                             type="text"
+                            onChange={handleInputChange}
                         />
                         <Campo 
                             id="cidade"
@@ -106,6 +169,7 @@ const Cadastro = () => {
                             label="Cidade"
                             placeholder="Cidade"
                             type="text"
+                            onChange={handleInputChange}
                         />
                         <Campo 
                             id="uf"
@@ -113,6 +177,7 @@ const Cadastro = () => {
                             label="UF"
                             placeholder="UF"
                             type="text"
+                            onChange={handleInputChange}
                         />
                        </fieldset>
                         <fieldset>
@@ -123,6 +188,7 @@ const Cadastro = () => {
                             label="Celular"
                             placeholder="Celular"
                             type="text"
+                            onChange={handleInputChange}
                         />
                         <Campo 
                             id="whatsapp"
@@ -130,6 +196,7 @@ const Cadastro = () => {
                             label="Whatsapp"
                             placeholder="Whatsapp"
                             type="text"
+                            onChange={handleInputChange}
                         />
                         <Campo 
                             id="email"
@@ -137,13 +204,15 @@ const Cadastro = () => {
                             label="E-mail"
                             placeholder="E-mail"
                             type="email"
+                            onChange={handleInputChange}
                         />
                         <Campo 
                             id="facebook"
                             name="facebook"
                             label="Facebook"
                             placeholder="Facebook"
-                            type="email"
+                            type="text"
+                            onChange={handleInputChange}
                         />
                         </fieldset>
                         <fieldset>

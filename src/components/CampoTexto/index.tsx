@@ -1,20 +1,19 @@
-import React from 'react';
+import React, { InputHTMLAttributes } from 'react';
 
 import './styles.css';
 
-interface CampoTextoProps {
+interface CampoTextoProps extends InputHTMLAttributes<HTMLInputElement> {
     type: string,
-    id: string,
     placeholder: string,
     label: string,
     name: string
 }
 
-const CampoTexto: React.FC<CampoTextoProps> = (props) => {
+const CampoTexto: React.FC<CampoTextoProps> = ({ type, placeholder, label, name, ...rest }) => {
     return (
         <div className="campos">
-            <input type={props.type} id={props.id} placeholder={props.placeholder} />   
-            <label htmlFor={props.name}>{props.label}:</label>            
+            <input type={type} id={name} name={name} placeholder={placeholder} {...rest}/>   
+            <label htmlFor={name}>{label}:</label>            
         </div>
     );
 }
