@@ -1,12 +1,11 @@
 import React, { FormEvent, useState, useEffect, ChangeEvent } from 'react';
+import { useHistory } from 'react-router-dom';
 
 import Cabecalho from '../../components/Cabecalho';
 import Campo from '../../components/CampoTexto';
 import api from '../../services/api';
 
 import './styles.css';
-import { useHistory } from 'react-router-dom';
-
 
 interface Categoria {
     id: number;
@@ -123,7 +122,7 @@ const Cadastro = () => {
             console.log('Erro: ', err);
         });
     }
-    return(
+    return (
         <div id="page-cadastro">
             <div id="page-cadastro-content" className="container">
                 <Cabecalho titulo="Cadastro" />
@@ -148,6 +147,7 @@ const Cadastro = () => {
                             onChange={handleInputChange}
                         />
                         </fieldset>
+
                        <fieldset>
                            <legend>Seu endereço</legend>
                            <Campo 
@@ -183,6 +183,7 @@ const Cadastro = () => {
                             onChange={handleInputChange}
                         />
                        </fieldset>
+
                         <fieldset>
                             <legend>Seus contatos</legend>
                             <Campo 
@@ -218,6 +219,7 @@ const Cadastro = () => {
                             onChange={handleInputChange}
                         />
                         </fieldset>
+
                         <fieldset>
                             <div className="select-categoria">
                                     <div className="select-block">
@@ -230,8 +232,8 @@ const Cadastro = () => {
                                         </select>
                                     </div> 
                                     {catSelecionada === '0' ? 
-                                    <h4>Selecione uma categoria para exibir os serviços</h4> : 
-                                    <h4>Serviços realizados</h4>
+                                        <h4>Selecione uma categoria para exibir os serviços</h4> : 
+                                        <h4>Serviços realizados</h4>
                                     } 
                                         
                                         <div className="check-subcategorias">
@@ -244,6 +246,7 @@ const Cadastro = () => {
                                         </div>                           
                                 </div>
                         </fieldset>
+
                         <button type="submit">Salvar</button>
                     </form>
                 </main>

@@ -2,18 +2,99 @@
     width: 100vw;
     height: 100vh;
 
+    display: flex;
+    justify-content: center;
     text-align: center;
 }
 
-#page-cadastro-realizado header {
-    margin-bottom: 3rem;
+#page-cadastro-realizado-content {
+    margin: 1rem auto;
 }
 
-#page-cadastro-realizado main h1 {
-    margin-bottom: 0.8rem;
+#page-cadastro-realizado .logo-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 0 auto;
 }
 
-#page-cadastro-realizado main img {
-    width: 25rem;
-    margin: 5rem auto;
+#page-cadastro-realizado .logo-container a {
+    margin-top: 1rem;
+    margin-left: 7.5rem;
+    font-size: 0.7rem;
+}
+
+#page-cadastro-realizado .logo-container img {
+    width: 12rem;
+}
+
+#page-cadastro-realizado .content-info {
+    margin-top: 3rem;
+}
+
+#page-cadastro-realizado .content-info h1 {
+    margin: 1rem auto;
+}
+
+#page-cadastro-realizado .back-image img {
+    margin: 3rem auto;
+    width: 85%;
+}
+
+@media (min-width: 700px) {
+    #page-cadastro-realizado-content {
+        max-width: 1100px;
+        display: grid;
+        grid-template-rows: 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-areas: 
+        "logo texto texto"
+        "img img img"
+    }
+
+    #page-cadastro-realizado .logo-container {
+        grid-area: logo;
+    }
+
+    #page-cadastro-realizado .logo-container img {
+        width: 22rem;
+    }
+
+    #page-cadastro-realizado .logo-container a {
+        position: absolute;
+        top: 5rem;
+        right: 10rem;
+        font-size: 1.2rem;
+    }
+
+    #page-cadastro-realizado .content-info {
+        grid-area: texto;
+        font-size: 1.8rem;
+        margin: 2rem;
+    }
+
+    #page-cadastro-realizado .back-image {
+        grid-area: img;
+        align-self: center;
+    }
+
+    #page-cadastro-realizado .back-image img {
+        width: 70%;
+    }
+
+    #page-cadastro-realizado .home-page {
+        grid-area: botao;
+        align-self: center;
+        font-size: 1.2rem;
+    }
+
+    #page-cadastro-realizado .home-page a {
+       background-color: transparent;
+       color: var(--cor-principal);
+    }
+
+    #page-cadastro-realizado .home-page a:hover {
+        background-color: transparent;
+        color: var(--cor-hover);
+     }
 }

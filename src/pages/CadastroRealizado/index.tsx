@@ -9,23 +9,21 @@ import './styles.css'
 
 const CadastroRealizado = () => {
     return(
-        <div id="page-cadastro-realizado">
+        <main id="page-cadastro-realizado">
             <div id="page-cadastro-realizado-content" className="container">
-                <header className="logo-container">
-                    <Link to='/'>
-                        <img src={logo} alt="Logotipo" />
-                    </Link>
-                </header>
-                <main>
-                    <h1>Parabéns!!!</h1>
-                    <h3>Seu cadastro foi realizado com sucesso!</h3>
-                    <div className="back-image">
+                <section className="logo-container">
+                    <img src={logo} alt="Logotipo" />
+                    <Link to='/' >Ir para página inicial</Link> 
+                </section>
+                <section className="content-info">
+                        <h1>Seja bem-vindo!!!</h1>
+                        <h4>Seu cadastro foi realizado com sucesso!</h4>
+                </section>
+                <section className="back-image">
                         <img src={fundo} alt="Back" />
-                    </div>
-                    <Link to='/'>Ir para página inicial</Link>
-                </main>
+                </section>
             </div>
-        </div>
+        </main>
     );
 }
 
