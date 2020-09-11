@@ -9,7 +9,6 @@ import Cabecalho from '../../components/Cabecalho';
 import Dados from '../../components/DadosLista';
 
 import './styles.css';
-import Select from '../../components/Select';
 
 interface Profissional {
     id: number,
@@ -20,7 +19,7 @@ interface Profissional {
     celular: string,
     whatsapp: string,
     facebook: string,
-    subcategorias: [string],
+    subcategorias: [],
 }
 
 interface Categoria {
@@ -138,7 +137,8 @@ const Lista = () => {
     function handleSelectSubcategoria(event: ChangeEvent<HTMLSelectElement>) {
         event.preventDefault();
         const subcat = event.target.value;
-        setSubcatSelecionada(subcat);    
+        setSubcatSelecionada(subcat);
+        console.log(profissionais); 
     }
 
     function handleSelectUf(event: ChangeEvent<HTMLSelectElement>) {
@@ -218,11 +218,11 @@ const Lista = () => {
                                 key={profissional.id}
                                 nome={profissional.nome}
                                 bairro={profissional.bairro}
-                                contato={profissional.celular}
+                                celular={profissional.celular}
                                 whats={profissional.whatsapp}
                                 face={profissional.facebook}
-                                subcategorias={profissional.subcategorias}
                             />
+
                         ))}
                         {/* <Dados 
                             nome="Teste"

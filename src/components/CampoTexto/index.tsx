@@ -13,7 +13,7 @@ const CampoTexto: React.FC<CampoTextoProps> = ({ type, placeholder, label, name,
     return (
         <div className="campos">
             <input type={type} id={name} name={name} placeholder={placeholder} {...rest}/>   
-            <label htmlFor={name}>{label}:</label>            
+            <label htmlFor={name}>{label}</label>            
         </div>
     );
 }

@@ -5,6 +5,7 @@
     display: flex;
     justify-content: center;
     text-align: center;
+    background-color: #ebe2e2;
 }
 
 #page-cadastro-realizado-content {
@@ -46,14 +47,17 @@
         max-width: 1100px;
         display: grid;
         grid-template-rows: 1fr 1fr;
-        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-columns: 2fr 1fr 1fr;
         grid-template-areas: 
-        "logo texto texto"
-        "img img img"
+        "logo img img"
+        "texto img img"
     }
 
     #page-cadastro-realizado .logo-container {
         grid-area: logo;
+        text-align: initial;
+        justify-content: initial;
+        margin-left: 8rem;
     }
 
     #page-cadastro-realizado .logo-container img {
@@ -70,7 +74,8 @@
     #page-cadastro-realizado .content-info {
         grid-area: texto;
         font-size: 1.8rem;
-        margin: 2rem;
+        text-align: initial;
+        margin: 0 auto;
     }
 
     #page-cadastro-realizado .back-image {
@@ -79,7 +84,7 @@
     }
 
     #page-cadastro-realizado .back-image img {
-        width: 70%;
+        width: 100%;
     }
 
     #page-cadastro-realizado .home-page {

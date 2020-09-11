@@ -1,5 +1,6 @@
 import React, { FormEvent, useState, useEffect, ChangeEvent } from 'react';
 import { useHistory } from 'react-router-dom';
+import InputMask from 'react-input-mask';
 
 import Cabecalho from '../../components/Cabecalho';
 import Campo from '../../components/CampoTexto';
@@ -86,31 +87,16 @@ const Cadastro = () => {
         const categoria = catSelecionada;
         const subcategorias = subcatsSelecionada;
 
-        // const data = new FormData();
-
-        // data.append('nome', nome);
-        // data.append('cpf', cpf);
-        // data.append('cep', cep);
-        // data.append('bairro', bairro);
-        // data.append('cidade', cidade);
-        // data.append('uf', uf);
-        // data.append('celular', celular);
-        // data.append('whatsapp', whatsapp);
-        // data.append('email', email);
-        // data.append('facebook', facebook);
-        // data.append('categoria', categoria);
-        // data.append('subcategorias', subcategorias.join(','));
-
         const data = {
             nome: nome,
             cpf: cpf,
             cep: cep, 
             bairro: bairro, 
             cidade: cidade, 
-            uf: uf, 
+            uf: uf.toUpperCase(), 
             celular: celular, 
             whatsapp: whatsapp, 
-            email: email, 
+            email: email.toLowerCase(), 
             facebook: facebook,
             categoria: categoria,
             subcategorias: subcategorias.join(',')
@@ -136,88 +122,103 @@ const Cadastro = () => {
                             label="Nome completo"
                             placeholder="Nome completo"
                             type="text"
+                            minLength={3}
                             onChange={handleInputChange}
                         />
-                        <Campo 
-                            id="cpf"
-                            name="cpf"
-                            label="CPF"
-                            placeholder="CPF"
-                            type="text"
-                            onChange={handleInputChange}
-                        />
+                        <div className="input-mask">
+                            <InputMask 
+                                mask="999.999.999-99"
+                                maskChar=" "
+                                placeholder="CPF"
+                                id="cpf"
+                                name="cpf"
+                                onChange={handleInputChange}
+                            />
+                            <label htmlFor="cpf">CPF</label>
+                        </div>
                         </fieldset>
 
                        <fieldset>
                            <legend>Seu endereço</legend>
-                           <Campo 
-                            id="cep"
-                            name="cep"
-                            label="CEP"
-                            placeholder="CEP"
-                            type="text"
-                            onChange={handleInputChange}
-                        />
-                        <Campo 
-                            id="bairro"
-                            name="bairro"
-                            label="Bairro"
-                            placeholder="Bairro"
-                            type="text"
-                            onChange={handleInputChange}
-                        />
-                        <Campo 
-                            id="cidade"
-                            name="cidade"
-                            label="Cidade"
-                            placeholder="Cidade"
-                            type="text"
-                            onChange={handleInputChange}
-                        />
-                        <Campo 
-                            id="uf"
-                            name="uf"
-                            label="UF"
-                            placeholder="UF"
-                            type="text"
-                            onChange={handleInputChange}
-                        />
+                           <div className="input-mask">
+                                <InputMask 
+                                    mask="99.999-999"
+                                    maskChar=" "
+                                    placeholder="CEP"
+                                    id="cep"
+                                    name="cep"
+                                    onChange={handleInputChange}
+                                />
+                                <label htmlFor="cep">CEP</label>
+                            </div>
+                            <Campo 
+                                id="bairro"
+                                name="bairro"
+                                label="Bairro"
+                                placeholder="Bairro"
+                                type="text"
+                                onChange={handleInputChange}
+                            />
+                            <Campo 
+                                id="cidade"
+                                name="cidade"
+                                label="Cidade"
+                                placeholder="Cidade"
+                                type="text"
+                                onChange={handleInputChange}
+                            />
+                            <Campo 
+                                id="uf"
+                                name="uf"
+                                label="UF"
+                                placeholder="UF"
+                                type="text"
+                                maxLength={2}                            
+                                onChange={handleInputChange}
+                            />
                        </fieldset>
 
                         <fieldset>
                             <legend>Seus contatos</legend>
+                            <div className="input-mask">
+                                <InputMask 
+                                    mask="(99)99999-9999"
+                                    maskChar=" "
+                                    placeholder="Celular"
+                                    id="celular"
+                                    name="celular"
+                                    onChange={handleInputChange}
+                                />
+                                <label htmlFor="celular">Celular</label>
+                            </div>
+                            <div className="input-mask">
+                                <InputMask 
+                                    mask="99999999999"
+                                    maskChar=" "
+                                    placeholder="Whatsapp"
+                                    id="whatsapp"
+                                    name="whatsapp"
+                                    onChange={handleInputChange}
+                                />
+                                <label htmlFor="whatsapp">Whatsapp</label>
+                            </div>
+                            
                             <Campo 
-                            id="celular"
-                            name="celular"
-                            label="Celular"
-                            placeholder="Celular"
-                            type="text"
-                            onChange={handleInputChange}
-                        />
-                        <Campo 
-                            id="whatsapp"
-                            name="whatsapp"
-                            label="Whatsapp"
-                            placeholder="Whatsapp"
-                            type="text"
-                            onChange={handleInputChange}
-                        />
-                        <Campo 
-                            id="email"
-                            name="email"
-                            label="E-mail"
-                            placeholder="E-mail"
-                            type="email"
-                            onChange={handleInputChange}
-                        />
-                        <Campo 
-                            id="facebook"
-                            name="facebook"
-                            label="Facebook"
-                            placeholder="Facebook"
-                            type="text"
-                            onChange={handleInputChange}
-                        />
+                                id="email"
+                                name="email"
+                                label="E-mail"
+                                placeholder="E-mail"
+                                type="email"
+                                onChange={handleInputChange}
+                            />
+                            <Campo 
+                                id="facebook"
+                                name="facebook"
+                                label="Facebook"
+                                placeholder="Facebook"
+                                type="text"
+                                onChange={handleInputChange}
+                            />
                         </fieldset>
 
                         <fieldset>
@@ -246,8 +247,12 @@ const Cadastro = () => {
                                         </div>                           
                                 </div>
                         </fieldset>
-
-                        <button type="submit">Salvar</button>
+                        {/* {
+                            !formData.nome && !formData.cpf && !formData.cep && !formData.bairro
+                            && !formData.cidade && !formData.uf && !formData.celular && !formData.whatsapp
+                            && !formData.email && catSelecionada === '0' && subcatsSelecionada ? <p>vazio</p> : <p>cheio</p>
+                        } */}
+                        <button type="submit">Salvar</button> 
                     </form>
                 </main>
             </div>

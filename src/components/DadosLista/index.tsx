@@ -9,29 +9,27 @@ import './styles.css';
 
 interface DadosProps {
     nome: string,
-    contato: string,
+    celular: string,
     bairro: string,
     whats: string,
     face: string,
-    subcategorias: [string],
 }
 
-const Dados: React.FC<DadosProps> = ({nome, contato, bairro, whats, face, subcategorias}) => {
+const Dados: React.FC<DadosProps> = ({nome, celular, bairro, whats, face}) => {
     return (
         <article id="box-dados">
             <section className="dados">
                 <p>Nome: <strong>{nome}</strong></p>
-                <p>Contato: <strong>{contato}</strong></p>
+                <p>Contato: <strong>{celular}</strong></p>
                 <p>Bairro: <strong>{bairro}</strong></p>
-                <p>Serviços: <strong>{subcategorias}</strong></p>
             </section>
             <section className="redesSociais">
-                <Link to={`/${whats}`}>
+                <a href={`https://wa.me/${whats}`} target="_blank">
                     <img src={whatsapp} alt='Whatsapp' />
-                </Link>
-                <Link to={`/${face}`}>
+                </a>
+                <a href={`https://facebook.com/${face}`} target="_blank">
                     <img src={facebook} alt='Facebook' />
-                </Link>
+                </a>
                 <Link to='/detalhes'>
                     <img src={mais} alt='Saiba mais' />
                 </Link>
