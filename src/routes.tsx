@@ -6,6 +6,7 @@ import Lista from './pages/Listagem';
 import SaberMais from './pages/SaberMais';
 import Cadastrar from './pages/Cadastro';
 import CadastroRealizado from './pages/CadastroRealizado';
+import DadosDetalhes from './pages/Detalhes';
 
 const Routes = () => {
     return (
@@ -16,6 +17,7 @@ const Routes = () => {
                 <Route component={SaberMais} path="/saber-mais" />
                 <Route component={Cadastrar} path="/cadastrar" />
                 <Route component={CadastroRealizado} path="/cadastroRealizado" />
+                <Route component={DadosDetalhes} path="/detalhes/:id" />
             </Switch>
         </BrowserRouter>
     );

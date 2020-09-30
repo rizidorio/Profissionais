@@ -19,7 +19,6 @@ interface Profissional {
     celular: string,
     whatsapp: string,
     facebook: string,
-    subcategorias: [],
 }
 
 interface Categoria {
@@ -50,13 +49,15 @@ const Lista = () => {
     const [cidades, setCidades] = useState<string[]>([]);
 
     const [catSelecionada, setCatSelecionada] = useState('0');
-    const [nomeCatSelecionada, setNomeCatSelecionada] = useState('Selecione uma categoria para exibir a lista');
+    const [nomeCatSelecionada, setNomeCatSelecionada] = useState('Utilize os filtros para exibir a lista');
     const [subcatSelecionada, setSubcatSelecionada] = useState('0');
 
     const [UfSelecionada, setUfSelecionada] = useState('0');
     const [CidadeSelecionada, setCidadeSelecionada] = useState('0');
 
     useEffect(() => {
+        // const data = api.get(`profissionais?cidade=${CidadeSelecionada}&categoria=${catSelecionada}&subcategoria=${subcatSelecionada}`);
+
         let data;
 
         subcatSelecionada === '0' ? data = api.get(`profissionais?cidade=${CidadeSelecionada}&categoria=${catSelecionada}`) :
@@ -99,7 +100,6 @@ const Lista = () => {
 
             setCidades(NomesCidades);
         });
-
     }, [UfSelecionada]);
 
     function handleSelectCategoria(event: ChangeEvent<HTMLSelectElement>) {
@@ -138,7 +138,6 @@ const Lista = () => {
         event.preventDefault();
         const subcat = event.target.value;
         setSubcatSelecionada(subcat);
-        console.log(profissionais); 
     }
 
     function handleSelectUf(event: ChangeEvent<HTMLSelectElement>) {
@@ -195,7 +194,7 @@ const Lista = () => {
                                     <div className="select-block">
                                         <label htmlFor="subcategorias">Serviços</label>
                                         <select name="subcategorias" id="subcategorias" value={subcatSelecionada} onChange={handleSelectSubcategoria}>
-                                            <option value="0">Todos Serviços</option>
+                                            <option value="0">Todos os serviços</option>
                                             {subcategorias.map(subcategoria => (
                                                 <option key={subcategoria.id} value={subcategoria.id}>{subcategoria.nome}</option>
                                             ))}
@@ -215,6 +214,7 @@ const Lista = () => {
                     <section className="lista-profissionais">
                         {profissionais.map(profissional => (
                             <Dados
+                                id={profissional.id}
                                 key={profissional.id}
                                 nome={profissional.nome}
                                 bairro={profissional.bairro}
@@ -222,17 +222,7 @@ const Lista = () => {
                                 whats={profissional.whatsapp}
                                 face={profissional.facebook}
                             />
-
-                        ))}
-                        {/* <Dados 
-                            nome="Teste"
-                            bairro="Centro"
-                            contato="(24)99999-9999"
-                            whats="24999999999"
-                            face="teste"
-                            subcategorias = "Pedreiro alvenaria, Pedreiro Acabamento"
-                        /> */}
-                        
+                        ))}                        
                     </section>
                     {/* <footer>
                         <Link to="/pagina" className="esquerda" aria-disabled>
