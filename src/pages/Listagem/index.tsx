@@ -144,7 +144,6 @@ const Lista = () => {
         event.preventDefault();
         const uf = event.target.value;
         setUfSelecionada(uf);
-        console.log(UfSelecionada);
     }
 
     function handleSelectCity(event: ChangeEvent<HTMLSelectElement>) {
