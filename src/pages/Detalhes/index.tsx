@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from 'react';
-import { RouteComponentProps, withRouter } from 'react-router-dom';
+import { Link, RouteComponentProps, withRouter } from 'react-router-dom';
 
 import api from '../../services/api';
 
 import Cabecalho from '../../components/Cabecalho';
+
+import './styles.css';
 
 type DadosDetalhesParams = {
     id: string,
@@ -51,12 +53,23 @@ const DadosDetalhes: React.FC<DadosDetalhesProps> = ({ match }) => {
     return (
         <div id="page-detalhes">
             <div id="page-detalhes-content" className="content">
-                <Cabecalho titulo={profissional.nome}/>
-                
-                <div>
-                    <h2>{categoriaProfissional.nome}</h2>
-                    <h2>{servicoProfissional.map(servico => servico.nome).join(', ')}</h2>
-                </div>
+                <Cabecalho titulo={`Detalhes sobre ${profissional.nome}`}/>
+                <main>
+                    <article>
+                        <p>Nome: <strong>{profissional.nome}</strong></p>
+                        <p>Bairro: <strong>{profissional.bairro}</strong></p>
+                        <p>Cidade: <strong>{profissional.cidade}</strong></p>
+                        <p>Celuar: <strong>{profissional.celular}</strong></p>
+                        <p>Whatsapp:  
+                            <a href={`https://api.whatsapp.com/send?phone=55${profissional.whatsapp}&text=Encontrei%20seu%20contato%20no%20site%20@Profissionais`} target="_blank" > 
+                                <strong> {profissional.whatsapp}</strong>
+                            </a>
+                        </p>
+                        <p>Facebook: <Link to=""><strong>{profissional.facebook}</strong></Link></p>
+                        <p>Categoria: <strong>{categoriaProfissional.nome}</strong></p>
+                        <p>Serviços: <strong>{servicoProfissional.map(servico => servico.nome).join(' - ')}</strong></p>
+                    </article>
+                </main>
             </div>
         </div>
     );

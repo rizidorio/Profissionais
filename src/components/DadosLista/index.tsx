@@ -44,7 +44,7 @@ const Dados: React.FC<DadosProps> = ({id, nome, celular, bairro, whats, face}) =
                 <p>Bairro: <strong>{bairro}</strong></p>     
                 <p>Serviços: 
                     <strong> {servicos.map(
-                        servico => servico.nome).join(', ')}
+                        servico => servico.nome).join(' - ')}
                     </strong>
                 </p>             
             </section>
